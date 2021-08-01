@@ -11,3 +11,6 @@ Los siguientes son ejemplos de identificadores válidos:
 ### Cadenas
 Las cadenas deben estar encerradas entre comillas simples o dobles, además se admiten las siguientes secuencias de escape (al estilo del lenguaje C):
 | Secuencia de escape | Carácter |
+|---------------------|----------|
+| \\ | \ |
+| \' | ' |
