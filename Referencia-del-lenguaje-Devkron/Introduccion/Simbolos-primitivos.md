@@ -20,3 +20,20 @@ Las cadenas deben estar encerradas entre comillas simples o dobles, además se a
 | \t | Tabulador [9] |
 
 Ejemplos de cadenas válidas:
+```DKL
+"Algún 'texto' 1"
+'Algún texto\r\n"entre comillado dentro de comillas simples"'
+}
+```
+### Agrupadores
+Permiten delimitar un bloque o una parte de las declaraciones
+- ( ) Declaración de atributos
+- { } Cuerpo de la declaración
+### Comentarios
+Se utiliza la misma sintaxis que en el lenguaje C.
+```DKL
+//Comentario hasta el final de la línea
+
+/* Texto de comentario que puede 
+incluir varias líneas */
+```
