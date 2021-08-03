@@ -14,3 +14,9 @@ Las cadenas deben estar encerradas entre comillas simples o dobles, además se a
 |---------------------|----------|
 | \\ | \ |
 | \' | ' |
+| \" | " |
+| \r | Retorno de carro [13] |
+| \n | Avance de línea [10] |
+| \t | Tabulador [9] |
+
+Ejemplos de cadenas válidas:
