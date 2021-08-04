@@ -23,7 +23,7 @@ Ejemplos de cadenas válidas:
 ```DKL
 "Algún 'texto' 1"
 'Algún texto\r\n"entre comillado dentro de comillas simples"'
-}
+
 ```
 ### Agrupadores
 Permiten delimitar un bloque o una parte de las declaraciones
