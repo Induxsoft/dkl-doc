@@ -24,7 +24,7 @@ En DKL se pueden usar identificadores sin declarar o cadenas como nombres de ele
 | DKL | XML |
 |-----|-----|
 | "prefijo:Persona" ( nombre="Juan" "prefijo:apellido"="López" ) | <prefijo:Persona nombre = "Juan" prefijo:apellido = "López" /> |
-| Mascota ("nombre"="Firulais" "prefijo:"Propietario"="Juan López") | <Mascota nombre = "Firulais" prefijo:Propietario = "Juan López" /> |
+| Mascota ("nombre"="Firulais" "prefijo:"Propietario"="Juan López") | `<Mascota nombre = "Firulais" prefijo:Propietario = "Juan López" />` |
 | Personas(cantidad="5")   {    Persona(nombre="Juan")     Persona(nombre="Pedro")    Persona(nombre="Camila")   } | <Personas cantidad = "5" >   <Persona nombre = "Juan" /    <Persona nombre = "Pedro" />   <Persona nombre = "Camila" />    </Personas> |
 
 ### Bloques de texto
