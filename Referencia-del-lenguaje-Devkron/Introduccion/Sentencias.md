@@ -37,8 +37,25 @@ else
 ### switch – case
 
 Permite ejecutar secciones de código con base en valores que coinciden con una expresión principal, su estructura es la siguiente:
+**{**
 
-**switch Expresión**
+**case ExpresiónOp1**
+
+```DKL
+{
+	//Este código se ejecuta si el resultado de ExpresiónOp1==Expresión
+}
+```
+
+**case ExpresiónOp2**
+
+```DKL
+{
+	//Este código se ejecuta si el resultado de ExpresiónOp2==Expresión
+	return //Esta sentencia obliga a salir del bloque switch completo
+}
+```
+**default**
 
 ```DKL
 
