@@ -11,7 +11,7 @@ Todos los programas en DKL tienen 3 ámbitos:
 ![Texto alternativo]( "Título de la imagen")
 
 ```DKL
-#include “dkli.dkh”
+#include "dkli.dkh"
 #!
 program
 {
@@ -34,7 +34,7 @@ Si se escribe un programa imperativo deberá incluirse el cuerpo de código dent
 Los elementos program y module no tienen más propósito que servir de nodo raíz y contenedor del ámbito principal y son totalmente equivalentes.
 
 ```DKL
-program “mi programa”
+program "mi programa"
 {
 	//Código aquí
 }
@@ -43,7 +43,7 @@ program “mi programa”
 Es equivalente a:
 
 ```DKL
-module “mi programa”
+module "mi programa"
 {
 	//Código aquí
 }
@@ -52,7 +52,7 @@ module “mi programa”
 También es válido:
 
 ```DKL
-module “modulo raíz”
+module "modulo raíz"
 {
 	funcion1::
 {
