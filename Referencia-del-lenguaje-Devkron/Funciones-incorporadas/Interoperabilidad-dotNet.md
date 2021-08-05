@@ -103,7 +103,7 @@ La fecha 23 de Noviembre del año 2023 se representa como el número **20231123*
 
 La fecha y hora 5 de Septiembre de 2007 a las 20:35:23 sería **20070905.203523**
 
-|||
+||**fecha** – Una cadena que representa una fecha **formato** – Un formato de fecha con la sintaxis usada por C#|
 |-----------|-----------|
 |||
 |||
