@@ -18,3 +18,56 @@ _new(tipo, argumentos)
 _new(ensamblado, tipo, argumentos)
 _new(ensamblado, tipo, argumentos) | tipo – Cadena con el nombre completo de una clase de .Net  ensamblado – Referencia a un ensamblado .Net cargado a través de la función _import_library. Si se omite, se asume que la clase pertenece a un ensamblado cargado intrínsecamente con el intérprete. argumentos – Es una lista de parámetros que serán pasados al constructor de la clase. |
 |||
+
+## Depuración
+
+Permiten conocer el estado interno del intérprete en tiempo de ejecución
+|||
+|-----------|-----------|
+|||
+|||
+
+## Manejo de errores
+
+Permiten obtener información acerca de errores o excepciones ocurridas en tiempo de ejecución.
+
+|||
+|-----------|-----------|
+|||
+|||
+
+## Consola
+
+|||
+|-----------|-----------|
+|||
+|||
+
+## Matemáticas 
+
+|||
+|-----------|-----------|
+|||
+|||
+
+## Conversiones
+
+|||
+|-----------|-----------|
+|||
+|||
+
+## Fecha y hora
+
+DKL ofrece un mecanismo sencillo para manejar valores de fecha y hora que consiste en tratar los valores como números decimales, en los que la parte entera representa a la fecha y la parte decimal a la hora. No hay representación de zona horaria.
+
+Por ejemplo: 
+
+La fecha 23 de Noviembre del año 2023 se representa como el número **20231123**
+
+La fecha y hora 5 de Septiembre de 2007 a las 20:35:23 sería **20070905.203523**
+
+|||
+|-----------|-----------|
+|||
+|||
