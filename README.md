@@ -1,7 +1,7 @@
 ## Documentación de Devkron [DKL]
 Referencia del lenguaje y bibliotecas principales
 
-### Capítulo I
+### Capítulo I - Lenguaje declarativo
 
 * [Introducción y primeros pasos](Referencia-del-lenguaje-Devkron/Introduccion/Primeros-pasos.md)
   * Ejecución de programas
@@ -19,15 +19,60 @@ Referencia del lenguaje y bibliotecas principales
   * Elemento
   * Atributos
   * Bloques de texto
-  * Meta atributos
+  * Meta-atributos
 
 * [Directivas](Referencia-del-lenguaje-Devkron/Introduccion/Directivas.md)
   * Inclusión de archivos de código
-  * Definición de meta*atributos
+  * Definición de meta-atributos
   * Definición de plantillas de elementos
   * Definición de patrones de sintaxis
   * Contexto declarativo e imperativo
     
-### Capítulo II
+### Capítulo II - Lenguaje imperativo
 
-  
+* Variables
+	* Tipos de datos
+	* Declaración de variables
+	* Atributos de variables
+	* Plantillas de variables
+	* Ámbito de las variables
+
+* Expresiones
+	* Constantes numéricas
+	* Constantes de cadena
+	* Llamadas a funciones
+
+* Operadores
+	* Aritméticos
+	* Lógicos
+	* Prioridad de operadores
+	* Concatenación de cadenas
+
+* Sentencias
+	* Control de flujo
+	* Ciclos
+	* Inclusión
+	* Asignación
+	* Estructuras (o registros) de datos
+	* Excepciones
+
+* Organización y estructura del programa
+	* Ámbitos
+	* Módulos
+	* Funciones definidas por el programador
+
+* Temas avanzados
+	* Referencias a funciones
+	* Funciones abiertas
+
+### Capítulo III - Funciones incorporadas
+
+* Interoperabilidad .Net
+* Depuración
+* Manejo de errores
+* Sistema
+* Consola
+* Matemáticas
+* Lógicas
+* Conversiones
+* Fecha y hora
