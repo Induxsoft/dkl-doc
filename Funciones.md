@@ -132,57 +132,49 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **hmacsha256**  Devuelve una cadena que representa el HMAC de un mensaje con cifrado SHA 256  **hmacsha256(mensaje, clave)**| **mensaje** – Cadena de texto  **clave** – Clave de cifrado|
 
 ## Archivos y carpetas
-|||
+| **commandline**  Devuelve una referencia a un registro que contiene los pares clave/valor pasados por línea de comando  **commandline(sep)** | **sep** – Cadena (un único carácter) que indica el separador clave/valor|
 |-------------|-------------|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **commandlinen**  Devuelve una referencia a un registro que contiene los pares clave/valor pasados por línea de comando y además identifica aquellos que deben considerarse de tipo numérico  **commandlinen(sep, numéricos)** | **sep** – Cadena (un único carácter) que indica el separador clave/valor  **numéricos** – Cadena que identifica las claves delimitadas por comas que deben ser tratadas como números|
+| **exec**  Ejecuta un proceso (programa ejecutable) del sistema y devuelve su salida de consola como una cadena, desencadena una excepción si ocurre el ejecutable termina con un error.  **exec(exe,args,wait)** | **exe** – Cadena con el nombre y ruta del ejecutable  **args** – Cadena de argumentos de línea de comando  **wait** – Numérico (booleano), si es @true detendrá la ejecución del programa DKL y esperará hasta por @exec_timeout milisegundos a que termine la ejecución del ejecutable.|
+| **_exec**  Ejecuta un proceso (programa ejecutable) del sistema y devuelve su salida de consola como una cadena.  **_exec(exe,args,wait, ml, riseerror)**| **exe** – Cadena con el nombre y ruta del ejecutable  **args** – Cadena de argumentos de línea de comando  **wait** – Numérico (booleano), si es @true detendrá la ejecución del programa DKL y esperará hasta por ml milisegundos a que termine la ejecución del ejecutable.  **ml** – Numérico, cantidad de milisegundos a esperar  **riseerror** – Numérico (booleano) si es @false no se desencadena una excepción aunque el ejecutable termine por error|
+| **file.newer**  Devuelve un número que indica cuál de dos archivos es más nuevo (con base en su fecha de modificación). Retorna -1 si f1 no existe, -2 si f2 no existe, 1 si f1 es más reciente que f2, 2 si f2 es más reciente que f1 y 0 si ambos tienen la misma fecha y hora de modificación.  **file.newer(f1,f2)**| **f1** – Cadena con la ruta y nombre de un archivo  **f2** – Cadena con la ruta y nombre de un archivo|
+| **file.exists**  Deuelve @true si el archivo indicado existe  **file(archivo)**| **archivo** – Cadena con la ruta y nombre de un archivo|
+| **dir.exists**  Devuelve @true si el directorio indicado existe  **dir.exists(ruta)** | **ruta** – Cadena con la ruta de un directorio|
+| **dir.delete**  Elimina el directorio indicador  **dir.delete(directorio)**| **directorio** – Cadena con el nombre y ruta de un directorio|
+| **dir.create**  Crea el directorio indicado  **dir.create(directorio)** | **directorio** – Cadena con el nombre y ruta de un directorio|
+| **file.rbytes**  Devuelve una referencia a un array de Bytes que es el contenido del archivo indicado.  **file.rbytes(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **file.wbytes**  Escribe un array de bytes en el archivo indicado sobrescribiendo su contenido (si existe y si no lo crea).  **file.wbytes(archivo, bytes)**| **archivo** – Cadena con el nombre y ruta de un archivo  **bytes** – Referencia a un array de bytes|
+| **file.delete**  Elimina el archivo indicado  **file.delete(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **file._copy**  Copia el archivo indicado, si el archivo de destino existe y se indica, se sobrescribe  **file._copy(origen, destino, sobrescribir)**| **origen** – Cadena con el nombre y ruta de un archivo  **destino** – Cadena con el nombre y ruta de un archivo  **sobrescribir** – Número (booleano) que indica si es @true, en caso de existir el archivo de destino será sobrescrito|
+| **file.extension**  Devuelve una cadena con la extensión del archivo indicado  **file.extension(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **file.name**  Devuelve el nombre con extensión del archivo indicado  **file.name(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **dir.name**  Devuelve el nombre del directorio indicado  **dir.name(directorio)** | **directorio** – Cadena con el nombre y ruta de un directorio|
+| **file.justname**  Devuelve solo el nombre (sin extensión) del archivo indicado  **file.justname(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **list.dirs**  Devuelve una referencia a una lista de cadenas que contiene todos los nombres de directorios de la ubicación indicada.  **list.dirs(ruta)** | **ruta** – Cadena con el nombre y ruta de un directorio|
+| **list.files**  Devuelve una referencia a una lista de cadenas que contiene todos los nombres de archivos de la ubicación indicada.  **list.files(ruta)** | **ruta** – Cadena con el nombre y ruta de un directorio|
+| **dir.ensure**  Verifica si un directorio existe y si no lo crea.  **dir.ensure(directorio)** | **ruta** – Cadena con el nombre y ruta de un directorio|
+| **file.copy**  Copia el archivo indicado y sobrescribe el destino en caso de que exista.  **file.copy(origen, destino)** | **origen** – Cadena con el nombre y ruta de un archivo  **destino** – Cadena con el nombre y ruta de un archivo|
+| **file.wtext**  Escribe la cadena de texto indicada en el archivo especificado con codificación utf8 sin BOM, si el archivo ya existe lo sobrescribe.  **file.wtext(archivo, texto)** | **archivo** – Cadena con el nombre y ruta de un archivo  **texto** – Cadena de texto|
+| **file.wtexte**  Escribe la cadena de texto indicada en el archivo especificado con la codificación especificada, si el archivo ya existe lo sobrescribe.  **file.wtexte(archivo, texto, codificación)** | **archivo** – Cadena con el nombre y ruta de un archivo  **texto** – Cadena de texto  **codificación** – Cadena de texto que indica la codificación|
+| **file.rtext**  Devuelve una cadena con el contenido del archivo especificado asumiendo que está codificado utf8  **file.rtext(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
+| **file.rtexte**  Devuelve una cadena con el contenido del archivo especificado con la codificación especificada  **file.rtexte(archivo, codificación)** | **archivo** – Cadena con el nombre y ruta de un archivo  **codificación** – Cadena de texto que indica la codificación|
+| **file.len**  Devuelve un número que representa el tamaño en bytes del archivo indicado  **file.len(archivo)** | **archivo** – Cadena con el nombre y ruta de un archivo|
+| **path.concat**  Devuelve una cadena de ruta que es la concatenación de las dos rutas dadas.  **path.concat(r1,r2)** | **r1** – Cadena con una ruta  **r2** - Cadena con otra parte de la ruta|
+| **dir.struct**  Devuelve una referencia a una lista de cadenas que representa todas las carpetas de la estructura de directorios de la ruta dada  **dir.struct(ruta)** | **ruta** – Cadena con el nombre y ruta de un archivo o directorio|
 
 ## Utilidades
 
-|||
+| **parse.bool**  Devuelve un valor numérico (booleado) tras el análisis de una cadena dada  **parse.bool(texto)** | **texto** - Cadena que puede evaluarse como booleano|
 |-----------|-----------|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **parse.num**  Devuelve un valor numérico tras el análisis de una cadena dada  **parse.num(texto)** | **texto** – Cadena que puede evaluarse como número|
+| **field.parse.dbool**  Devuelve un valor numérico (booleado) tras el análisis de un campo de un registro  **field.parse.dbool(registro, campo, default)** | **registro** – Referencia a un registro  **campo** – Cadena con el nombre o ruta de un campo  **default** – Valor numérico a usar como predeterminado en caso de que el campo no existe|
+| **field.parse.dnum**  Devuelve un valor numérico tras el análisis de un campo de un registro  **field.parse.dnum(registro, campo, default)** | **registro** – Referencia a un registro  **campo** – Cadena con el nombre o ruta de un campo  **default** – Valor numérico a usar como predeterminado en caso de que el campo no existe|
+| **foreach.fstr**  Itera los campos de un registro y permite usar sus valores como cadenas con el apoyo de la sentencia go | **Variables expuestas** : index, key y value  **Vea el código en functions.dkh y el ejemplo al final de esta tabla** |
+| **foreach.fnum**  Itera los campos de un registro y permite usar sus valores como números con el apoyo de la sentencia go | **Variables expuestas** : index, key y value  **Vea el código en functions.dkh y el ejemplo al final de esta tabla**|
+| **foreach.fobj** Itera los campos de un registro y permite usar sus valores como referencias a objetos con el apoyo de la sentencia go | |
+| **foreach.lstr**  Itera una lista y permite usar sus valores como cadenas con el apoyo de la sentencia go | **Variables expuestas** : index, key y value  **Vea el código en functions.dkh y el ejemplo al final de esta tabla**|
+| **foreach.lnum** Itera una lista y permite usar sus números como cadenas con el apoyo de la sentencia go | **Variables expuestas** : index, key y value  **Vea el código en functions.dkh y el ejemplo al final de esta tabla**|
+| **foreach.lobj**  Itera una lista y permite usar sus valores como referencias a objetos con el apoyo de la sentencia go | **Variables expuestas** : index, key y value  **Vea el código en functions.dkh y el ejemplo al final de esta tabla**|
 
 ```DKL
 #include "dkli.dkh"
