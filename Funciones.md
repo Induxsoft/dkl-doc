@@ -117,18 +117,19 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 
 ## Codificación y encriptación
 
-|||
+| **url_encode**  Devuelve una cadena codificada que puede usarse como parte de una url  **url_encode(cad)**|  **cad** – Cadena a codificar|
 |----------|-----------|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **url_dcode**  Devuelve una cadena decodificada que previamente fue codificada por url_encode  **url_dcode(cad)**| **cad** – Cadena a decodificar|
+| **to.base64**  Devuelve la cadena codificada en base64 utf8  **to.base64(cadena)**| **cadena** – Cadena a codificar en base64|
+| **from.base64**  Devuelve la cadena decodificada de base64 utf8   **from.base64(cadena)**| **cadena** – Cadena a decodificar de base64|
+| **to.b64**  Devuelve la cadena codificada en base64 con la codificación de caracteres indicada  **to.b64(cadena,codificación)**| **cadena** – Cadena a codificar en base64  **codificación** – Cadena (constante) que indica la codificación a usar: utf8,utf7, utf32, Unicode o ascii|
+| **from.b64**  Devuelve la cadena decodificada de base64 con la codificación de caracteres indicada  **from.b64(cadena, codificación)**| **cadena** – Cadena a decodificar de base64  **codificación** – Cadena (constante) que indica la codificación a usar: utf8,utf7, utf32, Unicode o ascii|
+| **encoding**  Devuelve una referencia a un objeto Encoding de .Net con base en la cadena dada  **encoding(codificación)**| **codificación** – Cadena (constante) que indica la codificación a usar: utf8,utf7, utf32, Unicode o ascii|
+| **encryp**  Devuelve una cadena encriptada con la clave dada  **encryp(cadena, clave)**| **cadena** – Cadena a encriptar  **clave** – Cadena que contiene la clave de encriptación|
+| **decryp**  Devuelve una cadena desencriptada con la clave dada  **decryp(cadena,clave)**| **cadena** – Cadena a desencriptar  **clave** – Cadena que contiene la clave de encriptación|
+| **md5**  Devuelve la firma md5 de la cadena  **md5(cadena)**| **cadena** –Cadena de texto|
+| **uuid**  Devuelve una cadena que representa un Identificado Global Único de 128bits.  **uuid()**| Sin argumentos|
+| **hmacsha256**  Devuelve una cadena que representa el HMAC de un mensaje con cifrado SHA 256  **hmacsha256(mensaje, clave)**| **mensaje** – Cadena de texto  **clave** – Clave de cifrado|
 
 ## Archivos y carpetas
 |||
