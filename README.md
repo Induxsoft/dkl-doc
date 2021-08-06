@@ -67,12 +67,13 @@ Referencia del lenguaje y bibliotecas principales
 
 ### Capítulo III - Funciones incorporadas
 
-* Interoperabilidad .Net
-* Depuración
-* Manejo de errores
-* Sistema
-* Consola
-* Matemáticas
-* Lógicas
-* Conversiones
-* Fecha y hora
+* [Acerca de las funciones incorporadas](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/acerca-de-las-funciones-incorporadas.md)
+* [Interoperabilidad .Net](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Interoperabilidad-dotNet.md)
+* [Depuración](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/depuracion.md)
+* [Manejo de errores](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Manejo-de-errores.md)
+* [Sistema](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Sistema.md)
+* [Consola](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Consola.md)
+* [Matemáticas](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Matematicas.md)
+* [Lógicas](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Logicas.md)
+* [Conversiones](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Conversiones.md)
+* [Fecha y hora](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Fecha-y-hora.md)
