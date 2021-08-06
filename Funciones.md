@@ -86,38 +86,102 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **length**  Devuelve la longitud de una cadena  **length(cad)**| cad – Cadena de texto|
 | **toupper**  Devuelve la cadena dada en mayúsculas  **toupper(cad)**| cad – Cadena de texto|
 | **tolower**  Devuelve la cadena dada en minúsculas  **tolower(cad)**| cad – Cadena de texto|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **split**  Devuelve una referencia a una lista de subcadenas delimitadas por el carácter indicado en la cadena dada.  **split(cad, carácter)**| **cad** – Cadena de texto  **carácter** – Cadena con el carácter separador|
+| **replace**  Devuelve una cadena en donde se ha reemplazado una subcadena por otra en una cadena dada  **replace(cad, buscar, reemplazo)**| **cad** – Cadena de texto  **buscar**- Cadena (subcadena) a buscar  **reemplazo** – Cadena (subcadena) a usar como reemplazo de la subcadena buscar|
+| **padright**  Devuelve una cadena de la longitud indicada que incluye a la cadena dada alineada a la derecha con las posiciones vacías llenas con el carácter indicado.  **padright(cad, tam, car)**| **cad** – Cadena de texto  **tam** – Tamaño al que se ajustará la cadena resultante  **car** – Carácter con el que se rellenarán los espacios vacíos|
+| **padleft**  Devuelve una cadena de la longitud indicada que incluye a la cadena dada alineada a la izquierda con las posiciones vacías llenas con el carácter indicado.  **padleft(cad, tam, car)**| **cad** – Cadena de texto  **tam** – Tamaño al que se ajustará la cadena resultante  **car** – Carácter con el que se rellenarán los espacios vacíos|
+| **contains**  Devuelve cierto si una cadena contiene a la subcadena indicada  **contains(cad, subcad)**| **cad** – Cadena de texto  **subcad** – Cadena (subcadena) a buscar|
+| **findstrex**  Devuelve la posición de inicio (base cero) de la subcadena buscada en la cadena dada. Si la subcadena no forma parte de la cadena retorna -1.  **findstrex(cadena, subcadena, sensible)**| **cad** – Cadena de texto  **subcadena** – Cadena (subcadena) a buscar  **sensible** – Número (booleano) que si es @false la búsqueda no es sensible a mayúsculas/minúsculas|
+| **findstr**  Devuelve la posición de inicio (base cero) de la subcadena buscada en la cadena dada sin distinción de mayúsculas/minúsculas. Si la subcadena no forma parte de la cadena retorna -1.  **findstr(cadena, subcadena)**| **cad** – Cadena de texto  **subcadena** – Cadena (subcadena) a buscar|
+| **ranychars**  Devuelve una cadena donde se han reemplazado cualquiera de los caracteres indicados por el carácter señalado.  **ranychasr(cadena, caracteres, car_reemplazo)**| **cad** – Cadena de texto  **caracteres** – Cadena que contiene los caracteres a reemplazar  **car_reemplazo** – Cadena (un único carácter) que será usado para reemplazar cualquiera de los de la cadena ‘caracteres’|
+| **ranydiffchars**  Devuelve una cadena donde se han reemplazado cualquiera de los caracteres diferentes a los indicados por el carácter señalado.  **ranydiffchars (cadena, caracteres, car_reemplazo)**| **cad** – Cadena de texto  **caracteres** – Cadena que contiene los caracteres que no serán reemplazados  **car_reemplazo** – Cadena (un único carácter) que será usado para reemplazar cualquiera de los de la cadena ‘caracteres’|
+| **cut**  Devuelve una cadena recortada a la cantidad de caracteres especificada, si la cadena dada es de longitud menor a lo solicitado la devuelve completa.  **cut(cad, longitud)**| **cad** – Cadena de texto  **longitud** – Número, longitud máxima a la que se truncará la cadena|
+| **format**  Devuelve la representación de un número con el formato indicado.  **format(num, formato)**| **num** – Número  **formato** – Cadena que describe el formato para la representación (los formatos de C#)|
+| **isany**  Devuelve @true si el carácter indicado es alguno de los que forman la cadena dada  **isany(carácter, cadena)**| **carácter** – Cadena (un único carácter) que será evaluado  **cadena** – Cadena de caracteres|
+| **containschar**  Devuelve @true si alguno de los caracteres de la cadena de caracteres está en la cadena dada  **containschar(cadena, cadena_caracteres)**| **cadena** – Cadena cuyos caracteres se evaluaran  **cadena_caracteres** – Cadena con la lista de caracteres para verificar coincidencia|
+| **containsword**  Devuelve @true si alguna de las palabras delimitadas por comas de la cadena de palabras está en la cadena dada. **containsword(cadena, lista_palabras)**| **cadena** – Cadena de texto  **lista_palabras** – Cadena con las palabras a buscar delimitadas por comas|
+| **isanyword**  Devuelve @true si alguna de las palabras delimitadas por comas de la cadena de palabras es la cadena  **isanyword(cadena, lista_palabras)**| **cadena** – Cadena con una palabra  **lista_palabras** – Lista de palabras separadas por comas contra la que se evaluará la cadena|
+| **from.args**  Devuelve un registro con los pares clave valor delimitados por el carácter separado indicado de la lista de argumentos dada.  **from.args(lista, separador)**| **lista** – Referencia a una lista de cadenas  **reparador** – Cadena (un único carácter) que se usa para delimitar los pares clave/valor de cada elemento de la lista de cadenas|
+| **from.argsn**  Devuelve un registro con los pares clave valor delimitados por el carácter separado indicado de la lista de argumentos dada. Además, aquellos listados como numéricos se asignan como tales al registro de resultados  **from.args(lista, separador,numéricos)**| **lista** – Referencia a una lista de cadenas  **reparador** – Cadena (un único carácter) que se usa para delimitar los pares clave/valor de cada elemento de la lista de cadenas  **numéricos** – Cadena de claves separadas por comas que indica cuáles claves deben reconocerse como números|
+| **text.create**  Devuelve una referencia a un nuevo objeto de buffer de texto (basado en StringBuilder)  **text.create()**| Sin argumentos|
+| **text.echo**  Agrega una cadena a un buffer de texto  **text.echo(buffer, cadena)**| **buffer** – Referencia a un buffer de texto  **cadena** – Cadena de texto|
+| **text.say**  Agrega una línea de texto (adiciona la secuencia de retorno de carro y avance de línea) a un buffer de texto  **text.say(buffer, cadena)**| **buffer** – Referencia a un buffer de texto  **cadena** – Cadena de texto|
+| **text.clear**  Limpia un buffer de texto  **text.clear(buffer)**| **buffer** – Referencia a un buffer de texto|
+| **text.get**  Devuelve una cadena a partir de un buffer de texto  **text.get(buffer)**| **buffer** – Referencia a un buffer de texto|
 
 ## Fecha y hora
+| **now**  Devuelve una referencia a una estructura DateTime de .Net que corresponde a la fecha y hora actuales  **now()**| Sin argumentos |
+|-------------|---------------|
+| **str2dt**  Devuelve una referencia a una estructura DateTime de .Net que corresponde a la cadena indicada si es posible hacer la conversión.   **str2dt(cadena)**||
+| **date_str**  Devuelve una cadena que corresponde con la fecha (DateTime) indicada con el formato especificado.  **date_str(fechahora, formato)**| **fechahora** – Referencia a una estructura de fecha-hora (DateTime)  **formato** – Cadena con el formato (C#) con el que se representará la fecha|
 
 ## Codificación y encriptación
 
+|||
+|----------|-----------|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+
 ## Archivos y carpetas
+|||
+|-------------|-------------|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
 
 ## Utilidades
+
+|||
+|-----------|-----------|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
 
 ```DKL
 #include "dkli.dkh"
