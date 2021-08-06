@@ -79,13 +79,13 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **rtrim**  Devuelve una cadena sin los caracteres vacíos (espacio y tabulador) del final de la cadena dada  **rtrim(cad**| cad – Cadena de texto|
 | left| **cad** – Cadena de texto  **omitir** – Número de caracteres|
 | **right**  Devuelve una subcadena que inicia en la cantidad de caracteres indicados a partir del final de la cadena original.  **right(cad, antesfinal)** Devuelve una subcadena que omite los caracteres al inicio de la cadena original indicados.  **left(cad,omitir)**| **cad** – Cadena de texto  **antesfinal** – Número de caracteres|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **substring**  Devuelve una subcadena que inicia en el carácter indicado y tiene la longitud indicada.  **substring(cad, inicio, longitud)**| **cad** – Cadena de texto  **inicio** – Número (índice base cero)  **longitud** – Número (cantidad de caracteres)|
+| **lremove**  Devuelve una subcadena sin los caracteres después de la posición indicada a partir del inicio de la cadena dada  **lremove(cad, cant)**| **cad** – Cadena de texto  **cant** – Número (cantidad) de caracteres|
+| **remove**  Devuelve una subcadena sin los caracteres indicados del inicio y longitud en la cadena dada  **remove(cad, inicio, longitud)**| **cad** – Cadena de texto  **inicio** – Número (índice base cero)  **longitud** – Número (cantidad de caracteres)|
+| **rremove**  Devuelve una subcadena sin los caracteres indicados contados a partir del final de la cadena dada  **rremove(cad, cant)**| **cad** – Cadena de texto  **cant** – Número (cantidad de caracteres)|
+| **length**  Devuelve la longitud de una cadena  **length(cad)**| cad – Cadena de texto|
+| **toupper**  Devuelve la cadena dada en mayúsculas  **toupper(cad)**| cad – Cadena de texto|
+| **tolower**  Devuelve la cadena dada en minúsculas  **tolower(cad)**| cad – Cadena de texto|
 |||
 |||
 |||
