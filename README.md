@@ -30,25 +30,25 @@ Referencia del lenguaje y bibliotecas principales
     
 ### Capítulo II - Lenguaje imperativo
 
-* Variables
+* [Variables](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Variables.md)
 	* Tipos de datos
 	* Declaración de variables
 	* Atributos de variables
 	* Plantillas de variables
 	* Ámbito de las variables
 
-* Expresiones
+* [Expresiones](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Expresiones.md)
 	* Constantes numéricas
 	* Constantes de cadena
 	* Llamadas a funciones
 
-* Operadores
+* [Operadores](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Operadores.md)
 	* Aritméticos
 	* Lógicos
 	* Prioridad de operadores
 	* Concatenación de cadenas
 
-* Sentencias
+* [Sentencias](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Sentencias.md)
 	* Control de flujo
 	* Ciclos
 	* Inclusión
@@ -56,12 +56,12 @@ Referencia del lenguaje y bibliotecas principales
 	* Estructuras (o registros) de datos
 	* Excepciones
 
-* Organización y estructura del programa
+* [Organización y estructura del programa](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Organizacion_y_estructura_del_programa.md)
 	* Ámbitos
 	* Módulos
 	* Funciones definidas por el programador
 
-* Temas avanzados
+* [Temas avanzados](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Temas_avanzados.md)
 	* Referencias a funciones
 	* Funciones abiertas
 
