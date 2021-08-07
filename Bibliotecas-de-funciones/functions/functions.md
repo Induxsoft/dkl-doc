@@ -1,4 +1,32 @@
-# Funciones
+# functions.dkh
+
+## Variables globales
+
+Estas variables globales mejoran la seguridad de tipos y facilitan la lectura de los programas.
+
+## Constantes
+
+| @true | Use estas variables globales como constantes para comparaciones en expresiones como: valor==@true, valor==@false|
+|-------------|-----------|
+|@false|
+
+## Plantillas de variables
+
+| @bool | Use estas variables para establecer atributos al momento de declarar variables en la forma (ejemplos): **mivariable[@bool] // Declara una variable que solo admite 1 o 0 **  minumero  [@int] =10 /* Declara una variable que solo admite números enteros y la inicializa con el valor 10*/|
+|-----------------|------------|
+| @int |
+| @number |
+| @positive |
+| @negative |
+| @string |
+
+Vea cómo se han declarado estas variables en el archivo functions.dkh
+
+## Variables de configuración
+
+| @exec_timeout | Contiene el tiempo en milisegundos que espera el intérprete por la respuesta de un proceso invocado con la función exec definida más adelante. |
+|-----------------|----------------|
+
 
 ## Registros (estructuras)
 
@@ -109,7 +137,7 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **text.clear**  Limpia un buffer de texto  **text.clear(buffer)**| **buffer** – Referencia a un buffer de texto|
 | **text.get**  Devuelve una cadena a partir de un buffer de texto  **text.get(buffer)**| **buffer** – Referencia a un buffer de texto|
 
-## Fecha y hora
+### Fecha y hora
 | **now**  Devuelve una referencia a una estructura DateTime de .Net que corresponde a la fecha y hora actuales  **now()**| Sin argumentos |
 |-------------|---------------|
 | **str2dt**  Devuelve una referencia a una estructura DateTime de .Net que corresponde a la cadena indicada si es posible hacer la conversión.   **str2dt(cadena)**||

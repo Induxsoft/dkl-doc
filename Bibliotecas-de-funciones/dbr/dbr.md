@@ -1,4 +1,5 @@
-# Funciones para administración de bases de datos relacionales
+# dbr.dkh
+## Funciones para administración de bases de datos relacionales
 
 La gestión de bases de datos relacionales en Devkron se realiza a través de bibliotecas especializadas. Esta biblioteca (dbr.dkh) se basa en induxsoft.API.DB que utiliza los mecanismos de conexión, patrones y prestaciones de induxsoft.Connections e induxsoft.DMA.
 
