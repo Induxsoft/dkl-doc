@@ -293,14 +293,14 @@ Además de las funciones para el acceso a datos relacionales, las bases de datos
 | **dbr.login**  Devuelve una referencia hacia una conexión de bases de datos abierta y crea un registro de sesión si el usuario y contraseña son válidos.  **dbr.login(qn, usuario, pwd)**| **qn** – Cadena con el nombre cualificado de una conexión  **usuario** – Cadena con el Id de usuario  **pwd** – Cadena con la contraseña|
 |------------|---------------------|
 | **dbr.logout**  Cierra la sesión y la conexión a la base de datos.  **dbr.logout(db)**| **db** – Referencia a una conexión de bases de datos|
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| **dbr.reconnect**  Devuelve una referencia hacia una conexión de bases de datos abierta si el id de sesión presentado es válido.  **dbr.reconnect(qn, sesid)**| **qn** – Cadena con el nombre cualificado de una conexión  **sesid** – Cadena con el Id de una sesión|
+| **dbr.setHashUnicode**  Establece que la comprobación de la firma md5 se realice considerando la cadena de contraseña codificada con UNICODE.  **dbr.setHashUnicode(v)**| **v** – Número (booleano) que establece el tipo de codificación para la firma de comprobación de la contraseña|
+| **dbr.getSID**  Devuelve una cadena con el Id de la sesión  **dbr.getSID(db)**| **db** – Referencia a una conexión de bases de datos|
+| **dbr.get**  Devuelve una referencia a un registro con los datos de fila de una tabla con base en su clave primaria (sys_pk)  **dbr.get(db, tabla, pk)**| **db** – Referencia a una conexión de bases de datos **tabla** – Cadena con el nombre de la tabla  **pk** – Número (entero) que corresponde a la clave primaria de la fila a recuperar|
+| **dbr.getg**  Devuelve una referencia a un registro con los datos de fila de una tabla con base en su GUID (sys_guid)  **dbr.getg(db, tabla, guid)**|**db** – Referencia a una conexión de bases de datos **tabla** – Cadena con el nombre de la tabla  **guid** – Cadena que corresponde a la GUID de la fila a recuperar|
+| **dbr.getw**  Devuelve una referencia a un registro con los datos de fila de una tabla con base en una expresión.  **dbr.getw(db, tabla, expresión, params)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **expresión** – Cadena de expresión de filtro (SQL)  **params** – Referencia a un registro con los parámetros para la expresión de filtro|
+| **dbr.save**  Actualiza o inserta una fila en una tabla de la base de datos con base en su sys_pk considerando la versión de instancia de registro (sys_recver)  **dbr.save(db, tabla, registro)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **registro**  - Referencia a un registro que contiene los datos|
+| **dbr.chklock**  Devuelve @true si el Id de bloqueo presentado es válido.  **dbr.chklock(db, tabla, id)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **id** – Número que corresponde a un Id de bloqueo|
+| **dbr.lock**  Impone un bloqueo pesimista sobre la fila de la tabla indicada y devuelve el Id de bloqueo.  **dbr.lock(db, tabla, pk)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **pk** – Número que corresponde con la clave primaria (sys_pk) de la fila a bloquear|
+| **dbr.unlock**  Retira el bloqueo pesimista especificado por su id.  **dbr.unlock(db, tabla, id)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **id** – Número que corresponde a un Id de bloqueo|
+| **dbr.erase**  Realiza la eliminación “lógica” de una fila de una tabla.  **dbr.erase(db, tabla, pk)**| **db** – Referencia a una conexión de bases de datos  **tabla** – Cadena con el nombre de la tabla  **pk** – Número que corresponde con la clave primaria (sys_pk) de la fila a borrar|
