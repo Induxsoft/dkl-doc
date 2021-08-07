@@ -177,3 +177,130 @@ Para conseguir los objetivos de diseño hemos previsto la utilización de un pat
 |||Este campo admite valores Nulos que significan que el registro no está bloqueado. | 
 ||| No se admiten duplicados |
 |sys_deleted | bool | Indica si la fila está marcada como eliminada
+
+### Clave primaria
+
+Siempre tiene el nombre sys_pk y se trata de un entero (de 32 bits o 64 bits dependiendo la plataforma y la configuración para el tipo SQL INT). Tiene los atributos incremental, único y sin permisión de valores nulos. Indexado ascendentemente. 
+
+### Claves foráneas
+
+Todas las claves foráneas son de tipo Entero (SQL INT) y contienen el valor del campo sys_pk de la tabla a la que apuntan. 
+
+### GUID’s
+¿Qué es una GUID?
+
+Es la abreviatura de Global Unique Identifier (Identificador Global Único) y constituye un valor numérico extremadamente alto (32 dígitos hexadecimales) generado por un algoritmo computacional que prácticamente asegura que es irrepetible independientemente del lugar y momento en que se cree.
+
+¿Para qué una GUID en cada registro?
+
+Las claves primarias usadas en todas las tablas son un entero auto-incremental generado por el motor de la base de datos, esto garantiza el mejor rendimiento del sistema y obedece a las mejores prácticas de diseño. Este valor es irrepetible en la misma tabla y base de datos.
+
+No obstante, un cliente “X” en la tabla “Cliente” de la base de datos “A” puede tener la misma clave primaria (valor para Sys_PK)  que un cliente “Y” en la tabla “Cliente” pero en la base de datos “B”. Esta situación no reviste ningún problema salvo si quisiéramos comprobar que el cliente “X” de la base de datos “A” no existe también en la base de datos “B”. (O si quisiéramos copiarlo). 
+
+Es decir, cada registro solo es único en la tabla y base de datos que lo contiene (alcance local de la clave primaria).
+
+Aunque la mayoría de las entidades por su naturaleza implementan códigos alfanuméricos (el campo Código de la tabla Cliente por ejemplo), no existe la garantía de que en otras bases de datos no se repitan. 
+
+Esto se soluciona con la implementación de GUIDs que son prácticamente únicas universalmente. 
+
+¿Por qué una GUID de 32 caracteres?
+
+Algunos motores de bases de datos implementan el tipo GUID (o equivalente), que está optimizado para contener este tipo de valores, sin embargo utilizarlo cuando esté disponible supondría una dependencia en particular.
+
+Por esta razón se implementa el campo sys_guid como texto (generalmente Varchar(32)).
+
+### Versión de instancia de registro
+
+El campo **sys_recver** establece un control de concurrencia mediante bloqueo optimista, contiene un número entero incremental y está implementado generalmente como un INT con el propósito de resolver el problema de sobre-escritura inadvertida en un entorno multiusuarios. 
+
+El campo **sys_recver** identifica una instancia de un registro en particular en el tiempo.
+
+Así el patrón de la instrucción UPDATE se implementa como:
+
+**UPDATE tabla SET sys_recver=sys_recver+1,… WHERE (sys_pk=X AND sys_recver=Z)**
+
+Donde X es la clave primaria del registro y Z es el número de versión que tenía el registro en el momento en que se leyó. Obsérvese que se incrementa el contador de versión con cada instrucción UPDATE.
+
+Aunque es teóricamente posible exceder los límites del tipo INT con sucesivos incrementos, es poco probable que ocurra en la práctica y además, puede implementarse una rutina de re-inicialización en función del escenario previsto.
+
+## Bloqueo pesimista
+
+Consiste en impedir la modificación de un registro durante todo el tiempo en que se encuentre impuesto un bloqueo por otro usuario.
+
+El bloqueo pesimista se implementa por fila. Para este propósito se utiliza el campo **sys_lock** implementado como clave foránea (tipo INT) que admite valores nulos pero no duplicados.
+
+El mecanismo se apoya en una tabla adicional que contiene la información de estado del bloqueo, dicha tabla con el nombre **sys_lockinfo** deberá tener los siguientes campos:
+
+- **sys_table.** Clave foránea de tipo entero que apunta hacia un catálogo de tablas para identificar la tabla a la que aplica el bloqueo.
+- **sys_row.** Entero que contiene el valor de la sys_pk de la fila bloqueada sin establecerse como clave foránea para evitar problemas por restricciones.
+- **sys_token.** Clave foránea que contiene el valor de sys_pk de la tabla que controla las sesiones.
+- **sys_active.** Un valor boolean que indica si el bloqueo está activo o no.
+
+
+De lo anterior se desprende la necesidad de que se implementen al menos las siguientes tablas de sistema:
+
+- **sys_catalog.** Que contendrá un catálogo de las entidades (tablas que se ajustan al patrón de diseño).
+- **sys_session.** Que contendrá un registro de control de sesión.
+
+Los procesos de bloqueo se implementan como sigue:
+
+**INT function Solicitud_de_bloqueo(tabla, fila, sesión)**
+
+Si el valor del campo sys_lock es nulo
+
+		Insertar un registro de bloqueo en sys_lockinfo
+
+Establecer el valor de sys_lock como la clave primaria del registro de bloqueo 
+		
+                **Return sys_lockinfo.sys_pk //El bloqueo se ha establecido correctamente**
+	Si no
+		Verificar si el registro de bloqueo en sys_lockinfo ha excedido el timeout
+		
+                Si timeout está excedido
+			
+                        **Cambiar valor de sys_lockinfo.sys_active=false**
+			
+                        Insertar un nuevo registro de bloqueo en sys_lockinfo
+
+Establecer el valor de sys_lock como la clave primaria del registro de bloqueo
+
+**Return sys_lockinfo.sys_pk //El bloqueo se ha establecido correctamente**
+
+Si no
+			**Return 0 //El registro está bloqueado por otro usuario**
+
+Bool function Quitar_Bloqueo(IDBloqueo)
+
+Cambiar valor de sys_lockinfo.sys_active=false del registro de bloqueo que corresponde
+
+Poner en nulo el valor del campo sys_lock de la tabla cuyo registro estaba bloqueado.
+
+Observe que existe la necesidad de un valor de timeout para el máximo tiempo permitido para que un registro permanezca bloqueado.
+
+Por otro lado, la implementación de la actualización en la base de datos desde un objeto persistente deberá considerar además la implementación de bloqueo pesimista aquí descrita.
+
+## Eliminación de entidades
+
+Eliminar además de peligroso puede ser complejo y engorroso, por eso se implementan los siguientes conceptos:
+
+- Eliminación lógica: Consiste en marcar una fila como eliminada para que no sea tomada en cuenta por las consultas y simule no existir aunque sigue estando en la base de datos y permite conservar la integridad y datos relacionados. Esto se consigue usando el campo sys_deleted para establecer y consultar la marca.
+- Eliminación definitiva: Esta implica el borrado de la información de la base de datos (sentencia DELETE) y puede ser limitada a los registros de una tabla o en cascada, lo cual supone eliminar registros relacionados a un padre o principal.
+
+## Funciones
+
+Además de las funciones para el acceso a datos relacionales, las bases de datos y tablas que sigan modelo de datos de Devkron pueden usar las siguientes funciones:
+
+| **dbr.login**  Devuelve una referencia hacia una conexión de bases de datos abierta y crea un registro de sesión si el usuario y contraseña son válidos.  **dbr.login(qn, usuario, pwd)**| **qn** – Cadena con el nombre cualificado de una conexión  **usuario** – Cadena con el Id de usuario  **pwd** – Cadena con la contraseña|
+|------------|---------------------|
+| **dbr.logout**  Cierra la sesión y la conexión a la base de datos.  **dbr.logout(db)**| **db** – Referencia a una conexión de bases de datos|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
