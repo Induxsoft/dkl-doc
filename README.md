@@ -77,3 +77,11 @@ Referencia del lenguaje y bibliotecas principales
 * [Lógicas](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Logicas.md)
 * [Conversiones](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Conversiones.md)
 * [Fecha y hora](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Fecha-y-hora.md)
+
+## Bibliotecas de funciones
+
+* [Funciones de propósito general (functions.dkh)](Bibliotecas-de-funciones/functions/functions.md)
+* [Serialización (serialize.dkh)](Bibliotecas-de-funciones/serialize/serialize.md)
+* [Base de datos relacionales (dbr.dkh)](Bibliotecas-de-funciones/dbr/dbr.md)
+* [Cliente HTTP y SMTP (webcl.dkh)](Bibliotecas-de-funciones/webcl/webcl.md)
+
