@@ -24,8 +24,6 @@ Referencia del lenguaje y bibliotecas principales
 * [Organización y estructura del programa](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Organizacion_y_estructura_del_programa.md)
 
 * [Temas avanzados](Referencia-del-lenguaje-Devkron/Lenguaje-imperativo/Temas_avanzados.md)
-	* Referencias a funciones
-	* Funciones abiertas
 
 ### Capítulo III - Funciones incorporadas
 
