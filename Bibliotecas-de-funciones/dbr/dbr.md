@@ -39,3 +39,19 @@ Las conexiones se alojan de manera predeterminada en el archivo **%ProgramData%\
 Use el Administrador de conexiones provisto con Devkron para gestionar esta información a través de una interfaz de usuario o las funciones de esta biblioteca.
 
 ### Funciones de administración de conexiones
+
+| **dba.newconnection**  Crea una nueva conexión a una base de datos existente con la información indicada  **dba.newconnection(qn, info)**| **qn** – Cadena con el nombre cualificado de la nueva conexión  **info** – Referencia a un registro que contiene todos los datos necesarios para establecer la conexión (host, puerto, usuario, password, etc.)|
+|-------------------|--------------------|
+| **dba.createconnection**  Crea una nueva conexión a una base de datos existente con la información indicada  **dba.createconnection(qn, info, default, sqldic)**| **qn** – Cadena con el nombre cualificado de la nueva conexión  **info** – Referencia a un registro que contiene todos los datos necesarios para establecer la conexión (host, puerto, usuario, password, etc.)  **default** – Número (booleano) que indica si se establecerá la conexión como la predeterminada para el grupo de conexión de la aplicación indicada.  **sqldic** – Cadena con la ruta a un archivo de diccionario de consultas sql|
+| **dba.createdb**  Crea una nueva base de datos y agrega la información de conexión al administrador de conexiones.  **dba.createdb(qn, info)**| **qn** – Cadena con el nombre cualificado de la nueva conexión  **info** – Referencia a un registro que contiene todos los datos necesarios para establecer la conexión (host, puerto, usuario, password, etc.)|
+| **dba.createschema**  Crea una nueva base de datos y agrega la información de conexión al administrador de conexiones.  **dba.createschema(qn, info, default,sqldic)**| **qn** – Cadena con el nombre cualificado de la nueva conexión  **info** – Referencia a un registro que contiene todos los datos necesarios para establecer la conexión (host, puerto, usuario, password, etc.)  **default** – Número (booleano) que indica si se establecerá la conexión como la predeterminada para el grupo de conexión de la aplicación indicada.  **sqldic** – Cadena con la ruta a un archivo de diccionario de consultas sql|
+| **dba.getconnectionset** Devuelve una referencia a un almacén de conexiones en una base de datos.  **dba.getconnectionset(qn)** | **qn**-Cadena con el nombre cualificado de una conexión a una base de datos que contiene un almacén de conexiones.|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
