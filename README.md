@@ -78,7 +78,7 @@ Referencia del lenguaje y bibliotecas principales
 * [Conversiones](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Conversiones.md)
 * [Fecha y hora](Referencia-del-lenguaje-Devkron/Funciones-incorporadas/Fecha-y-hora.md)
 
-## Bibliotecas de funciones
+### Capítulo IV - Bibliotecas de funciones
 
 * [Funciones de propósito general (functions.dkh)](Bibliotecas-de-funciones/functions/functions.md)
 * [Serialización (serialize.dkh)](Bibliotecas-de-funciones/serialize/serialize.md)
