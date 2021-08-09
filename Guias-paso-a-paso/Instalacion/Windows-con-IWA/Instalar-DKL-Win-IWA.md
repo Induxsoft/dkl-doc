@@ -3,7 +3,7 @@
 * .Net Framework 4.5 o superior
 * IIS 8 o superior con ASP.Net 4.5 o superior
 
-Internet Information Services es una característica de Windows que se puede instalar a través del menú Inicio. En menú Inicio busque Activar o desactivar las características de Windows.
+Internet Information Services (IIS) es una característica de Windows que se puede instalar a través del menú Inicio. En menú Inicio busque Activar o desactivar las características de Windows.
 
 Busque y seleccione Internet Information Services instalar IIS.
 
