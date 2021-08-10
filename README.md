@@ -57,3 +57,6 @@ Referencia del lenguaje y bibliotecas principales
 
 * [Cliente HTTP y SMTP (webcl.dkh)](Bibliotecas-de-funciones/webcl/webcl.md)
 
+### Capítulo V - Sitios y aplicaciones Web con Devkron
+
+* [La estructura @http_context](Sitios-y-aplicaciones-Web-con-DKL/Como-funciona.md)
