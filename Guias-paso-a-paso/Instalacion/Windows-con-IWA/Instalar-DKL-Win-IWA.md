@@ -3,7 +3,7 @@
 * .Net Framework 4.5 o superior
 * IIS 8 o superior con ASP.Net 4.5 o superior
 
-Internet Information Services es una característica de Windows que se puede instalar a través del menú Inicio. En menú Inicio busque Activar o desactivar las características de Windows.
+Internet Information Services (IIS) es una característica de Windows que se puede instalar a través del menú Inicio. En menú Inicio busque Activar o desactivar las características de Windows.
 
 Busque y seleccione Internet Information Services instalar IIS.
 
@@ -12,7 +12,7 @@ Busque y seleccione Internet Information Services instalar IIS.
 ## Instalación
 1. Descargar e instalar IWA
 
-[Descargue](https://induxsoft.net/?idpf=e7478a10d09147fcb0203bae001c8290) y ejecute el programa de instalación del Induxsoft Windows Agent [IWA] desde el sitio Web oficial de Induxsoft.
+[Descargue](https://induxsoft.net/dwnload.php?id=e4978751dfc244d4a48af47e161a91ec) y ejecute el programa de instalación del Induxsoft Windows Agent [IWA] desde el sitio Web oficial de Induxsoft.
 
 https://induxsoft.net/?idpf=e7478a10d09147fcb0203bae001c8290
 
