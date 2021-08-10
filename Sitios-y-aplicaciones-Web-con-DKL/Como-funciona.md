@@ -27,7 +27,7 @@ html
 
 Para probar el ejemplo, asegúrese de haber instalado y configurado los servicios de su servidor Web (IIS por ejemplo), cree un sitio Web y guarde en la carpeta correspondiente el programa como index.dkl
 
-<img src="img/index-dkl.png/>
+<img src="img/index-dkl.png"/>
 
 ## La estructura @http_context
 
@@ -75,7 +75,7 @@ El miembro output de response es una cadena que indica el origen de la salida y 
 * binary – Indica que la salida será un flujo de bytes referenciados por el miembro binary de reponse.
 
 #### text
-Este miembro contiene la cadena usada como contenido de la respuesta si se ha establecido ‘text’ como valor para output.
+Este miembro contiene la cadena usada como contenido de la respuesta si se ha establecido 'text' como valor para output.
 
 #### binary
 Este miembro contiene una referencia a un array de bytes usado como la respuesta si se ha establecido ‘binary’ como valor para output.
