@@ -29,6 +29,10 @@ Para probar el ejemplo, asegúrese de haber instalado y configurado los servicio
 
 <img src="img/index-dkl.png"/>
 
+Tras darle formato con alguna utilidad "pretty-json" se puede apreciar mejor:
+
+<img src="img/@http_context-in-json.png"/>
+
 ## La estructura @http_context
 
 La variable global de referencia a una estructura @http_context contiene dos miembros principales: request y response.
