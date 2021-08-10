@@ -82,5 +82,5 @@ El miembro output de response es una cadena que indica el origen de la salida y 
 Este miembro contiene la cadena usada como contenido de la respuesta si se ha establecido 'text' como valor para output.
 
 #### binary
-Este miembro contiene una referencia a un array de bytes usado como la respuesta si se ha establecido ‘binary’ como valor para output.
+Este miembro contiene una referencia a un array de bytes usado como la respuesta si se ha establecido 'binary' como valor para output.
 
