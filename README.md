@@ -69,7 +69,7 @@
 * [Responder con un archivo](Sitios-y-aplicaciones-Web-con-DKL/responder-archivo.md)
 
 * Marco de trabajo DKL-Web
-  * [Biblioteca cookies.dkl](Sitios-y-aplicaciones-Web-con-DKL/cookies.md)
+  * [Cookies](Sitios-y-aplicaciones-Web-con-DKL/cookies.md)
 
 ## Guías paso a paso
 
