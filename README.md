@@ -65,3 +65,9 @@
 ## Guías paso a paso
 
 * [Instalar Devkron en Windows con IIS a través de IWA](Guias-paso-a-paso/Instalacion/Windows-con-IWA/Instalar-DKL-Win-IWA.md)
+
+* [Responder HTML o XML](Sitios-y-aplicaciones-Web-con-DKL/responder-html-xml.md)
+
+* [Responder JSON o texto plano](Sitios-y-aplicaciones-Web-con-DKL/responder-json-txt.md)
+
+* [Responder con un archivo](Sitios-y-aplicaciones-Web-con-DKL/responder-archivo.md)
