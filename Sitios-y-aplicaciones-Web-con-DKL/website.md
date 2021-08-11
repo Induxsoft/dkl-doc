@@ -19,6 +19,7 @@ Consideraciones:
 #### Código DKL
 
 Consideraciones:
+
 * De manera predeterminada, se intentarán cargar en orde jerárquico todos los archivos config.dk y lib.dk que se encuentren desde la raíz y hasta la carpeta del recurso solicitado.
 
 
@@ -87,7 +88,7 @@ Y carga los archivos de código (del padre):
 
 /seccion2/index.dkl
 
-Usaría la plantilla: /template.dkt (Carga su propia plantilla)
+Usaría la plantilla: /seccion2/template.dkt (Carga su propia plantilla)
 
 Y carga los archivos de código (del padre y de su propia carpeta):
 
@@ -97,7 +98,7 @@ Y carga los archivos de código (del padre y de su propia carpeta):
 
 /seccion2/sub-seccion2-1/index.dkl
 
-Usaría la plantilla: /template.dkt (De su carpeta padre)
+Usaría la plantilla: /seccion2/template.dkt (De su carpeta padre)
 
 Y carga los archivos de código (de sus padres y de su propia carpeta):
 
