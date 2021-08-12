@@ -44,7 +44,7 @@ archivo.dkl es la ruta y nombre de archivo del programa a ejecutar.
 
 Ejemplo:
 ```DKL
-devkron.exe “c:\mis programas\programa.dkl” “–output:c:\mis salida\programa.xml” –ninja
+devkron.exe "c:\mis programas\programa.dkl" "–output:c:\mis salida\programa.xml" –ninja
 ```
 Guarda la salida XML del programa.dkl en el archivo programa.xml sin mostrar ningún dato por consola.
 ### Archivo dkli.dkh
