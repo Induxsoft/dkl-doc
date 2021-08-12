@@ -13,10 +13,15 @@ Archivo es la ubicación local o remota de un archivo que va a incorporarse en l
 Debido a que el parámetro archivo de la sentencia es una cadena y se usa la sintaxis de C, deberá usar doble \\ para indicar una \. 
 
 Ejemplos:
-- **#include "c:\\archivo.dkl" //Correcto**
-- **#include "c:\archivo.dkl" //Incorrecto**
-- **#include "archivo.dkl" /*Correcto, el archivo se busca en la misma ubicación que el programa que lo requiere o en las ubicaciones predeterminadas del entorno.*/**
-- **#include "https://dev.induxsoft.net/archivo.dkl" //Correcto**
+``` DKL
+#include "c:\\archivo.dkl" //Correcto
+#include "c:\archivo.dkl" //Incorrecto
+#include "archivo.dkl" /*Correcto, el archivo se busca en la misma ubicación que el programa
+			que lo requiere o en las ubicaciones predeterminadas del entorno.*/
+			
+#include "https://dev.induxsoft.net/archivo.dkl" //Correcto
+```
+
 ### Definición de meta-atributos
 **#set**
 ```DKL
