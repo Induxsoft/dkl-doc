@@ -17,7 +17,7 @@ La sentencia if de Devkron es similar a la del lenguaje C, con la excepción de 
 ```DKL
 if  Expresión
 {
-//Código a ejecutar si Expresión es verdadera
+	//Código a ejecutar si Expresión es verdadera
 }
 else if Expresión2
 {
