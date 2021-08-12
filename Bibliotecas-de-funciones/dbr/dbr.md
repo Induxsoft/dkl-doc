@@ -244,36 +244,43 @@ De lo anterior se desprende la necesidad de que se implementen al menos las sigu
 
 Los procesos de bloqueo se implementan como sigue:
 
-**INT function Solicitud_de_bloqueo(tabla, fila, sesión)**
+Pseudo-código
+``` pseudocode
+INT function Solicitud_de_bloqueo(tabla, fila, sesión)
 
-Si el valor del campo sys_lock es nulo
+	Si el valor del campo sys_lock es nulo
 
 		Insertar un registro de bloqueo en sys_lockinfo
 
-Establecer el valor de sys_lock como la clave primaria del registro de bloqueo 
+		Establecer el valor de sys_lock como la clave primaria del registro de bloqueo 
 		
-                **Return sys_lockinfo.sys_pk //El bloqueo se ha establecido correctamente**
+                Returnar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
 	Si no
 		Verificar si el registro de bloqueo en sys_lockinfo ha excedido el timeout
 		
                 Si timeout está excedido
 			
-                        **Cambiar valor de sys_lockinfo.sys_active=false**
+                        Cambiar valor de sys_lockinfo.sys_active=false
 			
                         Insertar un nuevo registro de bloqueo en sys_lockinfo
 
-Establecer el valor de sys_lock como la clave primaria del registro de bloqueo
+			Establecer el valor de sys_lock como la clave primaria del registro de bloqueo
 
-**Return sys_lockinfo.sys_pk //El bloqueo se ha establecido correctamente**
+			Returnar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
 
-Si no
-			**Return 0 //El registro está bloqueado por otro usuario**
+		Si no
+			**Returnar 0 (El registro está bloqueado por otro usuario)
+```
 
+El desbloqueo en pseudo-código quedaría como sigue:
+``` pseudocode
 Bool function Quitar_Bloqueo(IDBloqueo)
 
-Cambiar valor de sys_lockinfo.sys_active=false del registro de bloqueo que corresponde
+	Cambiar valor de sys_lockinfo.sys_active=false del registro de bloqueo que corresponde
 
-Poner en nulo el valor del campo sys_lock de la tabla cuyo registro estaba bloqueado.
+	Poner en nulo el valor del campo sys_lock de la tabla cuyo registro estaba bloqueado.
+
+```
 
 Observe que existe la necesidad de un valor de timeout para el máximo tiempo permitido para que un registro permanezca bloqueado.
 
