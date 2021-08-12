@@ -2,7 +2,7 @@
 
 Esta guía aplica si instalaste Devkron a través de IWA en un equipo con Windows.
 
-[Puedes ver la guía de instalación aquí](../Guias-paso-a-paso/Instalacion/Windows-con-IWA/Instalar-DKL-Win-IWA.md)
+[Puedes ver la guía de instalación aquí](../Instalacion/Windows-con-IWA/Instalar-DKL-Win-IWA.md)
 
 Para ejecutar un programa de consola escrito en DKL, haz lo siguiente:
 
