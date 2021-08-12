@@ -246,7 +246,7 @@ Los procesos de bloqueo se implementan como sigue:
 
 Pseudo-código
 ``` pseudocode
-INT function Solicitud_de_bloqueo(tabla, fila, sesión)
+INT función Solicitud_de_bloqueo(tabla, fila, sesión)
 
 	Si el valor del campo sys_lock es nulo
 
@@ -254,7 +254,7 @@ INT function Solicitud_de_bloqueo(tabla, fila, sesión)
 
 		Establecer el valor de sys_lock como la clave primaria del registro de bloqueo 
 		
-                Returnar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
+                Retornar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
 	Si no
 		Verificar si el registro de bloqueo en sys_lockinfo ha excedido el timeout
 		
@@ -266,15 +266,15 @@ INT function Solicitud_de_bloqueo(tabla, fila, sesión)
 
 			Establecer el valor de sys_lock como la clave primaria del registro de bloqueo
 
-			Returnar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
+			Retornar sys_lockinfo.sys_pk (El bloqueo se ha establecido correctamente)
 
 		Si no
-			**Returnar 0 (El registro está bloqueado por otro usuario)
+			Retornar 0 (El registro está bloqueado por otro usuario)
 ```
 
 El desbloqueo en pseudo-código quedaría como sigue:
 ``` pseudocode
-Bool function Quitar_Bloqueo(IDBloqueo)
+Bool función Quitar_Bloqueo(IDBloqueo)
 
 	Cambiar valor de sys_lockinfo.sys_active=false del registro de bloqueo que corresponde
 
