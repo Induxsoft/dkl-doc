@@ -1,4 +1,4 @@
-## Plantillas de páginas
+## Plantillas y carga de código DKL
 
 El marco de trabajo [dkl-web](https://github.com/Induxsoft/dkl-web) ofrece un mecanismo sencillo para:
 
