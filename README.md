@@ -70,6 +70,7 @@
 
 * Marco de trabajo DKL-Web
   * [Cookies](Sitios-y-aplicaciones-Web-con-DKL/cookies.md)
+  * [Plantillas e inclusiones automáticas](Sitios-y-aplicaciones-Web-con-DKL/website.md)
 
 ## Guías paso a paso
 
