@@ -304,8 +304,8 @@ cliente<"conyuge/nombre">:"sandra" //Ahora el miembro nombre del miembro conyuge
 Esta sintaxis de asignación permite que la expresión de ruta de los miembros sea formada dinámicamente, por ejemplo:
 
 ```DKL
-campo=”conyuge/nombre”
-cliente<campo>:”maria ” //Asigna “maria” al campo nombre del miembro conyuge de cliente
+campo="conyuge/nombre"
+cliente<campo>:"maria" //Asigna "maria" al campo nombre del miembro conyuge de cliente
 ```
 
 Puede asignar variables de referencia a campos usando el carácter * al final de la ruta del miembro:
