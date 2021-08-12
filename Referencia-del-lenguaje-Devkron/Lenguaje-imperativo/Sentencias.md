@@ -188,11 +188,11 @@ La sintaxis es:
 ref variable=expresión_que_devuelve_una_referencia
 ref variable: expresión_que_devuelve_una_referencia
 ```
-**El operador = en una sentencia ref liberará la variable a asignar si ya estaba asignada y creará una nueva entrada en la tabla interna del intérprete de referencias de objetos, los recursos asociados al objeto serán limpiados automáticamente si no hay otra variable que contenga la misma referencia.**
+* El operador = en una sentencia ref liberará la variable a asignar si ya estaba asignada y creará una nueva entrada en la tabla interna del intérprete de referencias de objetos, los recursos asociados al objeto serán limpiados automáticamente si no hay otra variable que contenga la misma referencia.
 
-**El operador : en la sentencia ref forzará la reutilización de los mismos recursos de la tabla de objetos de DKL para alojar ahí la nueva referencia, lo que ocasiona que si otras variables apuntan a la misma referencia también se verán afectadas.**
+* El operador : en la sentencia ref forzará la reutilización de los mismos recursos de la tabla de objetos de DKL para alojar ahí la nueva referencia, lo que ocasiona que si otras variables apuntan a la misma referencia también se verán afectadas.
 
-**Si la variable no estaba siendo usada con anterioridad, es indistinto el uso de = o : en ref.**
+* Si la variable no estaba siendo usada con anterioridad, es indistinto el uso de = o : en ref.
 
 # Estructuras (o registros) de datos
 
@@ -207,18 +207,18 @@ Por su parte, la sentencia using crea si no existe o reutiliza uno previamente c
 ```DKL
 new r
 {
-	@”campo1”:”datos del campo1”
+	@"campo1":"datos del campo1"
 }
 using r
 {
-	@”campo2”:”datos del campo2”
+	@"campo2":"datos del campo2"
 }
 ```
 
 El bloque de código anterior crea y luego complementa una estructura referenciada por la variable r que expresada en JSON sería así:
 
-```DKL
-{ “campo1”:”datos del campo1”, “campo2”:”datos del campo2” }
+```JSON
+{ "campo1":"datos del campo1", "campo2":"datos del campo2" }
 ```
 
 Miembros (campos) de las estructuras (o registros)
@@ -227,14 +227,17 @@ Los miembros siempre se indican empezando con el carácter @, seguido de una cad
 
 Los miembros que contienen datos de tipo valor (números o cadenas) se asignan con la sintaxis:
 
-- **@”nombre del campo” : “valor de cadena”**
-- **@”nombre del campo” : 9651 //Valor numérico**
-- **@”nombre del campo” : 8+f() // Expresión**
+```DKL
+@"nombre del campo" : "valor de cadena"
+@"nombre del campo" : 9651 //Valor numérico
+@"nombre del campo" : 8+f() // Expresión
+```
 
 En el caso de que los miembros hagan referencia a un objeto, se utiliza el carácter * al final del nombre como indicador.
 
-**@”miembro referencia de objeto*”: variable_referencia**
-
+```DKL
+@"miembro referencia de objeto*": variable_referencia
+```
 ## Miembros que son estructuras
 
 Una campo puede contener a su vez una estructura completa, declaración que se realiza con las sentencias new member o member, que crean o bien crean o re-usan una estructura miembro.
@@ -242,22 +245,23 @@ Una campo puede contener a su vez una estructura completa, declaración que se r
 ```DKL
 new r
 {
-	new member @”r.1”
-{
-	@”campo_r.1.1” : ”valor”
+	new member @"r.1"
+	{
+		@"campo_r.1.1" : "valor"
+	}
 }
-}
+
 using r
 {
-	member @”r.1”
-{
-	@”campo_r.1.1” : ”valor11”
-	@”campo_r.1.2” : ”valor12”
-}
-	new member @”r.2”
-{
-	@”campo_r.2.1” : ”valor”
-}
+	member @"r.1"
+	{
+		@"campo_r.1.1" : "valor11"
+		@"campo_r.1.2" : "valor12"
+	}
+	new member @"r.2"
+	{
+		@"campo_r.2.1" : "valor"
+	}
 }
 ```
 
@@ -282,18 +286,20 @@ Asignar valores a un campo de un registro (o estructura), al igual que obtener s
 ```DKL
 using cliente 
 {
-	@”nombre”: “Juan”
-	member @”conyuge”
-{
-	@”nombre”:”Lupita”
+	@"nombre": "Juan"
+	member @"conyuge"
+	{
+		@"nombre":"Lupita"
+	}
 }
-}
-```
 
-**n : cliente<”nombre”>	// n es asignada con el valor “juan”**
-**nc : cliente<” conyuge/nombre”> // nc es asignada con el valor “lupita”**
-**cliente<”nombre”>:”pedro” //Ahora el miembro nombre de cliente contiene “pedro”**
-**cliente<”conyuge/nombre”>:”sandra” //Ahora el miembro nombre del miembro conyuge de cliente contiene “sandra”**
+
+n : cliente<"nombre">		// n es asignada con el valor "juan"
+nc : cliente<"conyuge/nombre"> 	// nc es asignada con el valor "lupita"
+cliente<"nombre">:"pedro" 	//Ahora el miembro nombre de cliente contiene "pedro"
+cliente<"conyuge/nombre">:"sandra" //Ahora el miembro nombre del miembro conyuge de cliente contiene "sandra"
+
+```
 
 Esta sintaxis de asignación permite que la expresión de ruta de los miembros sea formada dinámicamente, por ejemplo:
 
@@ -306,13 +312,13 @@ Puede asignar variables de referencia a campos usando el carácter * al final de
 
 ```DKL
 ref objeto=algun_objeto
-registro<”campo*”>:objeto
+registro<"campo*">:objeto
 ```
 
 Así también, puede obtener una referencia desde un registro con la sintaxis precediendo la ruta del campo con el carácter &:
 
 ```DKL
-objeto2:registro<”&campo_referencia”>
+objeto2:registro<"&campo_referencia">
 ```
 
 Observe que aunque se está asignando una variable de tipo referencia, no se requiere la sentencia ref en este caso.
