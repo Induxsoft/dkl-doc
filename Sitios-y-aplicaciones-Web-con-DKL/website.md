@@ -109,7 +109,7 @@ Y carga los archivos de código (de sus padres y de su propia carpeta):
 
 ## Renderización de páginas con plantillas
 
-website.dkl define la función 'render' que permite incluir contenido (mediante funciones definidas por el programados) en las ubicaciones donde se le invoque dentro de las plantillas.
+website.dkl define la función 'render' que permite incluir contenido (mediante funciones definidas por el programador) en las ubicaciones donde se le invoque dentro de las plantillas.
 
 ### Plantillas HTML (template.htt)
 
