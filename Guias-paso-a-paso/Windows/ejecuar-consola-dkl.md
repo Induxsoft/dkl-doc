@@ -11,7 +11,7 @@ Para ejecutar un programa de consola escrito en DKL, haz lo siguiente:
 3. Escribe: devkron.exe, un espacio enblanco,  luego la ruta y nombre del programa que quieres ejecutar (entre comillas) y presiona ENTER 
 
 <img src="img/abrir-consola.png"/>
-<img src="img/consola.png"/>
+<img src="img/consola-p3.png"/>
 
 IWA Instala Devkron en Windows en la carpeta:
 ``` CMD
