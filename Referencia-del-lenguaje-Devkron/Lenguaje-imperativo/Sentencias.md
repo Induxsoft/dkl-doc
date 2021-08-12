@@ -14,17 +14,12 @@ Permiten la ejecución condicional de secciones de código.
 
 La sentencia if de Devkron es similar a la del lenguaje C, con la excepción de que no requiere paréntesis para delimitar la expresión a evaluar. 
 
-**if  Expresión**
-
 ```DKL
+if  Expresión
 {
 //Código a ejecutar si Expresión es verdadera
 }
-```
-
-**else if Expresión2**
-
-```DKL
+else if Expresión2
 {
 	//Código a ejecutar si Expresión es falsa, pero Expresión2 verdadera
 }
@@ -42,20 +37,21 @@ Permite ejecutar secciones de código con base en valores que coinciden con una 
 switch Expresión
 {
 	case ExpresiónOp1
-{
-	//Este código se ejecuta si el resultado de ExpresiónOp1==Expresión
-}
-case ExpresiónOp2
-{
-	//Este código se ejecuta si el resultado de ExpresiónOp2==Expresión
-	return //Esta sentencia obliga a salir del bloque switch completo
-}
-default
-{
-/*Este código se ejecuta si Expresión no coincide con ExpresiónOp1 ni con ExpresiónOp2*/
-return
-}
-/*Este código se ejecuta si Expresión==ExpresiónOp1 o a cualquier otro case que no contenga una sentencia break en su bloque */
+	{
+		//Este código se ejecuta si el resultado de ExpresiónOp1==Expresión
+	}
+	case ExpresiónOp2
+	{
+		//Este código se ejecuta si el resultado de ExpresiónOp2==Expresión
+		return //Esta sentencia obliga a salir del bloque switch completo
+	}
+	default
+	{
+	/*Este código se ejecuta si Expresión no coincide con ExpresiónOp1 ni con ExpresiónOp2*/
+	return
+	}
+	
+	/*Este código se ejecuta si Expresión==ExpresiónOp1 o a cualquier otro case que no contenga una sentencia break en su bloque */
 }
 ```
 ### return
@@ -64,16 +60,13 @@ La sentencia return en el ámbito principal de ejecución termina el programa.
 
 La sentencia return en el ámbito del cuerpo de una función definida por el programador retorna el valor indicado (si se ha especificado) a la expresión que la ha llamado.
 
-funcion1:
-
 ```DKL
+funcion1::
 {
 	return 10
 }
-```
-funcion2:
 
-```DKL
+funcion2::
 {
 	return
 }
@@ -99,7 +92,9 @@ Do y call son equivalentes (de hecho call es un ‘alias’ de do).
 
 Ejemplo:
 
-**do funcion1(“hola”) //Llama a la función indicada**
+```DKL
+do funcion1("hola") //Llama a la función indicada
+```
 
 En DKL no se puede llamar a las funciones más que dentro de expresiones, sentencias de asignación o mediante sentencias do/call.
 
