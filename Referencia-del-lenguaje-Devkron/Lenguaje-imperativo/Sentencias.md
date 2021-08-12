@@ -43,12 +43,12 @@ switch Expresión
 	case ExpresiónOp2
 	{
 		//Este código se ejecuta si el resultado de ExpresiónOp2==Expresión
-		return //Esta sentencia obliga a salir del bloque switch completo
+		break //Esta sentencia obliga a salir del bloque switch completo
 	}
 	default
 	{
-	/*Este código se ejecuta si Expresión no coincide con ExpresiónOp1 ni con ExpresiónOp2*/
-	return
+		/*Este código se ejecuta si Expresión no coincide con ExpresiónOp1 ni con ExpresiónOp2*/
+		break
 	}
 	
 	/*Este código se ejecuta si Expresión==ExpresiónOp1 o a cualquier otro case que no contenga una sentencia break en su bloque */
