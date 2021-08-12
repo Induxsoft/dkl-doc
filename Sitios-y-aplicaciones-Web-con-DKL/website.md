@@ -106,3 +106,84 @@ Y carga los archivos de código (de sus padres y de su propia carpeta):
   * /lib.dk
   * /seccion2/lib.dk
   * /seccion2/sub-seccion2-1/lib.dk
+
+## Renderización de páginas con plantillas
+
+website.dkl define la función 'render' que permite incluir contenido (mediante funciones definidas por el programados) en las ubicaciones donde se le invoque dentro de las plantillas.
+
+### Plantillas HTML (template.htt)
+
+Ejemplo de plantilla template.htt:
+``` HTML
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		#<render('head')>
+	</head>
+	<body>
+		#<render('body')>
+	</body>
+</html>
+```
+
+### Plantillas DKL (template.dkt)
+Ejemplo de plantilla template.dkt
+
+``` DKL
+#include "dkli.dkh"
+
+#$
+html(lang="es")
+{
+	head
+	{
+		$"#<render('head')>"
+	}
+	body
+	{
+		$"#<render('body')>"
+	}
+}
+
+```
+### Página de contenido (index.dkl)
+
+``` DKL
+#include "dkli.dkh"
+#!
+module "index.dkl"
+{
+    #include "functions.dkh"
+    #include "serialize.dkh"
+    #include "website.dkl"
+
+    head::
+    {
+        ##
+        title{$"Mi sitio Web con Devkron"}
+        ##
+    }
+
+    body::
+    {
+        ##
+        h1{$"Hola Mundo"}
+        ##
+    }
+
+    do render_page()
+}
+```
+### Comentarios
+Al solicitar a través de HTTP el recurso index.dkl, se devolverá la página resultante del uso de la plantilla (template.dkt o template.htt).
+
+Usar una plantilla en HTML o DKL tiene diferentes ventajas, por una parte el empleo de plantillas HTML facilita la reutilización de código de maquetado existente, mientras que el uso de las plantillas en DKL permite mayor control y dinamismo al momento de generar las páginas.
+
+Puede probar el código de los ejemplos guardando en una carpeta del sitio Web los archivos index.dkl y template.dkt y en otra carpeta el mismo archivo index.dkl pero con el archivo template.htt.
+
+Observe que la inclusión de la plantilla se realiza en la invocación de la función 'render_page()' de index.dkl.
+
+Las funciones 'body()' y 'head()' son llamadas por la función 'render()' utilizada en las plantillas.
+
+Si desea llamar a funciones a través de render que usan parámetros, simplemente use una sintaxis como: render('funcion(parametro1,...)')
