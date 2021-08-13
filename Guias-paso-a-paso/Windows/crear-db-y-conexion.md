@@ -21,7 +21,7 @@ Siga los siguientes pasos para crear una base de datos y configurar una conexió
 
 5. Configure los datos para establecer la conexión al servidor de bases de datos
 
-<img src="img/cnn-cfg-cnn.png"/>
+<img src="img/cnn-cgf-cnn.png"/>
 
 De acuerdo al ejemplo, ahora puede conectarse a través de código DKL con la sintaxis siguiente:
 
