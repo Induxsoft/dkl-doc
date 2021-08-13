@@ -111,7 +111,7 @@ Y carga los archivos de código (de sus padres y de su propia carpeta):
 
 website.dkl define la función 'render' que permite incluir contenido (mediante funciones definidas por el programador) en las ubicaciones donde se le invoque dentro de las plantillas.
 
-### Plantillas HTML (template.htt)
+#### Ejemplo de plantillas HTML (template.htt)
 
 Ejemplo de plantilla template.htt:
 ``` HTML
@@ -127,7 +127,7 @@ Ejemplo de plantilla template.htt:
 </html>
 ```
 
-### Plantillas DKL (template.dkt)
+#### Ejemplo de plantillas DKL (template.dkt)
 Ejemplo de plantilla template.dkt
 
 ``` DKL
@@ -147,7 +147,7 @@ html(lang="es")
 }
 
 ```
-### Página de contenido (index.dkl)
+### Ejemplo de página de contenido (index.dkl)
 
 ``` DKL
 #include "dkli.dkh"
