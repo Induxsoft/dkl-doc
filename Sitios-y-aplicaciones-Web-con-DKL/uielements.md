@@ -4,7 +4,7 @@ Cuando se construyen sitios Web que interactúan con bases de datos, existen tar
 
 El archivo de biblioteca uielements.dkl que forma parte del marco de trabajo [dkl-web](https://github.com/Induxsoft/dkl-web) ofrece las siguientes:
 
-### Funciones
+### Funciones en uielements.dkl
 
 #### uie.dbSelect
 Genera el HTML de un campo de entrada (input) Select con los datos de una consulta SQL.
@@ -48,3 +48,77 @@ using params
   
 }
 ```
+
+#### uie.iterator
+
+Itera las filas de una tabla (obtenida a través de una consulta a una base de datos generalmente), permitiendo generar elementos HTML y manteniendo totalizaciones por agrupaciones y en general.
+
+``` DKL
+do uie.iterator(params)
+```
+
+params - Es una estructura con los siguientes campos:
+
+```
+using params
+{
+  //Miembros requeridos (deben establecerse)
+  @"db*":objDB            // Referencia a un objeto de conexión a bases de datos abierto
+  @"source":"Select ..."  // Consulta SQL que devolverá una tabla
+  @"parameters*":obj      // Referencia a un registro que contiene los parámetros a pasar a la consulta
+ 
+  //Miembros opcionales y sus valores predeterminados (no necesita establecerlos)
+  
+  @"group_by":""          //Indica el nombre de la columna por la que se agruparán los datos
+  
+  //Este miembro contiene la configuración de columnas
+  member @columns
+  {
+    member @"nombre_columna" 
+    {
+        @"summary":""     //Es una de las siguientes cadenas: sum max min avg count    
+    }
+  }
+   
+  @"build_array": @false  // Si se establece en @true guardará una lista de filas que puede 
+                          // serializarse a JSON desde el miembro array_data
+                          
+  @"array_data":@null     // Después de la ejecución de uie.iterator contiene una referencia a 
+                          // un array de filas si build_array==@true
+  
+  @"datatable*": objTabla /* Si se establece esta referencia antes de la llamada a uie.iterator
+                             como un objeto de tabla no nulo, no se ejecutará la consulta y se 
+                             utilizarán los datos contenidos.
+                             
+                             Tras la llamada a uie.iterator, este miembro siempre contendrá la
+                             tabla de datos usada.*/
+                             
+  @"summaries*":@null     // Después de la ejecución de uie.iterator, si se han indicado totalizaciones,
+                          // contiene una referencia a una estructura con los totales generales y por agrupación
+                          
+  // Los siguientes miembros son referencias a funciones definidas por el programador 
+  // que serán invocadas para generar el contenido
+  
+  @"head*":func           // func - Es una referencia a una función que se invoca 
+                          // al empezar la iteración
+                          
+  @"begin_group*":func    // func - Es una referencia a una función que se invoca 
+                          // al empezar una agrupación                        
+  
+  @"each_row*":func       // func - Es una referencia a una función que se invoca 
+                          // por cada fila de la tabla de datos
+                          
+  @"summary_group*":func  // func - Es una referencia a una función que se invoca 
+                          // al terminar una agrupación
+
+  @"summary*":func        // func - Es una referencia a una función que se invoca 
+                          // al terminar toda la iteración
+}
+```
+
+### Funciones en uielements.dbtable.dkl
+
+El archivo de biblioteca uielements.dbtable.dkl que forma parte del marco de trabajo [dkl-web](https://github.com/Induxsoft/dkl-web) ofrece las siguientes funciones:
+
+#### uie.dbTable
+
