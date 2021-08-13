@@ -1,4 +1,4 @@
-## Ayudantes de interfaz de usuario HTML y bases de datos
+## Utilidades de generación de interfaz de usuario HTML enlazada a datos
 
 Cuando se construyen sitios Web que interactúan con bases de datos, existen tareas repetitivas que pueden añadir complejidad innecesaria al código.
 
