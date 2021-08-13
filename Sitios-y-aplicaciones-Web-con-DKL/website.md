@@ -113,7 +113,7 @@ website.dkl define la función 'render' que permite incluir contenido (mediante 
 
 #### Ejemplo de plantillas HTML (template.htt)
 
-Ejemplo de plantilla template.htt:
+
 ``` HTML
 <!DOCTYPE html>
 
@@ -128,7 +128,7 @@ Ejemplo de plantilla template.htt:
 ```
 
 #### Ejemplo de plantillas DKL (template.dkt)
-Ejemplo de plantilla template.dkt
+
 
 ``` DKL
 #include "dkli.dkh"
