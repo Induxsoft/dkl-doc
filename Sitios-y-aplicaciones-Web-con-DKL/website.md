@@ -155,7 +155,6 @@ html(lang="es")
 module "index.dkl"
 {
     #include "functions.dkh"
-    #include "serialize.dkh"
     #include "website.dkl"
 
     head::
@@ -175,15 +174,16 @@ module "index.dkl"
     do render_page()
 }
 ```
-### Comentarios
+### Explicación
 Al solicitar a través de HTTP el recurso index.dkl, se devolverá la página resultante del uso de la plantilla (template.dkt o template.htt).
 
 Usar una plantilla en HTML o DKL tiene diferentes ventajas, por una parte el empleo de plantillas HTML facilita la reutilización de código de maquetado existente, mientras que el uso de las plantillas en DKL permite mayor control y dinamismo al momento de generar las páginas.
 
 Puede probar el código de los ejemplos guardando en una carpeta del sitio Web los archivos index.dkl y template.dkt y en otra carpeta el mismo archivo index.dkl pero con el archivo template.htt.
 
+#### Las funciones render_page y render
 Observe que la inclusión de la plantilla se realiza en la invocación de la función 'render_page()' de index.dkl.
 
-Las funciones 'body()' y 'head()' son llamadas por la función 'render()' utilizada en las plantillas.
+Las funciones 'body()' y 'head()' son llamadas por la función 'render()' utilizada dentro de las plantillas.
 
 Si desea llamar a funciones a través de render que usan parámetros, simplemente use una sintaxis como: render('funcion(parametro1,...)')
