@@ -74,5 +74,5 @@
 
 ## Guías paso a paso
 
-* [Instalar Devkron en Windows con IIS a través de IWA](Guias-paso-a-paso/Instalacion/Windows-con-IWA/Instalar-DKL-Win-IWA.md)
+* [Instalar Devkron en Windows con IIS a través de IWA](Guias-paso-a-paso/Windows/Instalar-DKL-Win-IWA.md)
 
