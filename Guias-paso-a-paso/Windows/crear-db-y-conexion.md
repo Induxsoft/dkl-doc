@@ -10,12 +10,18 @@ Siga los siguientes pasos para crear una base de datos y configurar una conexió
 <img src="img/abrir-cnn-man.png"/>
 
 3. Agregue un nuevo grupo de aplicaciones (un grupo de aplicaciones permite organizar sus conexiones)
+  Los nombres de grupos de aplicaciones no deben contener espacios en blanco ni los caracteres: '@' y '/'
 
 <img src="img/cnn-add-app.png"/>
 
 4. Agregue una nueva conexión
+  Los nombres de conexiones solo pueden contener letras (a-z), números (0-9), puntos (.) y guiones (-_)
+
+<img src="img/cnn-add-cnn.png"/>
 
 5. Configure los datos para establecer la conexión al servidor de bases de datos
+
+<img src="img/cnn-cfg-cnn.png"/>
 
 De acuerdo al ejemplo, ahora puede conectarse a través de código DKL con la sintaxis siguiente:
 
