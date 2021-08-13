@@ -71,6 +71,7 @@
 * Marco de trabajo DKL-Web
   * [Cookies](Sitios-y-aplicaciones-Web-con-DKL/cookies.md)
   * [Plantillas e inclusiones automáticas](Sitios-y-aplicaciones-Web-con-DKL/website.md)
+  * [Utilidades de generación de interfaz de usuario HTML enlazada a datos](Sitios-y-aplicaciones-Web-con-DKL/uielements.md)
 
 ## Guías paso a paso
 
