@@ -75,4 +75,5 @@
 ## Guías paso a paso
 
 * [Instalar Devkron en Windows con IIS a través de IWA](Guias-paso-a-paso/Windows/Instalar-DKL-Win-IWA.md)
-
+* [Ejecutar programas (de consola) de Devkron](Guias-paso-a-paso/Windows/ejecutar-consola-dkl.md)
+* [Crear bases de datos, configurar y usar su conexión en Devkron](Guias-paso-a-paso/Windows/crear-db-y-conexion.md)
