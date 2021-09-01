@@ -29,8 +29,9 @@ service nginx start
     ./dkl -fastcgi
     ```
 
-Notas: 
+### Notas 
 
+El servicio FastCGI de Devkron solo está disponible en las distribuciones autocontenidas para Windows y Linux, vea las siguientes guías:
 Instalación de Devkron autocontenido
 * [Guía de instalación Windows x64](Windows/Instalar-dkl-winx64.md) 
 * [Guía instalación Linux](Linux/Instalar-dkl-Linux.md)
@@ -46,14 +47,14 @@ Ubicación de configuraciones de Nginx
 * En Linux: /etc/nginx
 * En Windows: Carpeta conf dentro de la carpeta de instalación
 
-### IMPORTANTE ###
+### IMPORTANTE 
 En Linux generalmente el servicio httpd no tiene permisos para acceder a la red, por lo que deberá ejecutar el siguiente comando (o su equivalente) para permitir que Nginx se comunique con la FastCGI de Devkron:
 
 ``` bash
 setsebool -P httpd_can_network_connect 1
 ```
 
-#### Ejemplo de un archivo de configuración de Nginx ####
+#### Ejemplo de un archivo de configuración de Nginx 
 ```
 worker_processes  1;
 
@@ -71,7 +72,7 @@ http {
         server_name  localhost;
         location / {
             include /nginx/conf/fastcgi_params;			
-			      fastcgi_pass 127.0.0.1:9090;
+	    fastcgi_pass 127.0.0.1:9090;
         }
         
         error_page   500 502 503 504  /50x.html;
