@@ -1,7 +1,7 @@
 ## Instalar Devkron en Windows x64
 
 1. Descarga los binarios de Devkron para Windows x64 desde: https://devkron.org/descargas/devkron-win-x64.zip
-2. Crea una carpeta en el disco duro de tu equipo y descomprime el contenido del archico devrkon-win-x64.zip
+2. Crea una carpeta en el disco duro de tu equipo y descomprime el contenido del archivo devrkon-win-x64.zip en ella
 
 ### Ejecutar programas de consola
 
