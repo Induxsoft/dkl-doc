@@ -15,18 +15,43 @@ program "hola"
     do print ("Hola mundo")    
 }
 ```
-Para ejecutarlo deberá escribir:
+Para ejecutarlo deberá escribir (Windows a través de IWA con .Net Framework):
 ```CMD
 devkron.exe "c:\mis programas\hola.dkl"
 
 ```
+
+En Windows desde distribución autocontenida
+```CMD
+dkl.exe "c:\mis programas\hola.dkl"
+
+```
+En Linux desde distribución autocontenida
+
+```BASH
+./dkl "c:\mis programas\hola.dkl"
+```
+
 Hágalo y vea el resultado
-### Parámetros de línea de comando de devkron.exe
+### Parámetros de línea de comando 
 Todos son opcionales, el único requerido es el primer argumento que debe ser la ruta y nombre de un programa DKL.
+
+Si instalaste Devkron a través de IWA en un equipo Windows
 ```CMD
 devkron.exe archivo.dkl [parámetros]
 
 ```
+Si instalaste Devkron en un equipo Windows desde la distribución autocontenida.
+```BASH
+dkl archivo.dkl [parámetros]
+
+```
+
+Si instalaste Devkron en un equipo Linux desde la distribución autocontenida.
+```BASH
+./dkl archivo.dkl [parámetros]
+```
+
 archivo.dkl es la ruta y nombre de archivo del programa a ejecutar.
 
 | Parámetro | Observación |
