@@ -58,8 +58,8 @@ Si crea un árbol de carpetas dentro de web como el siguiente:
        |----figura.png
 ```
 Las solicitudes:
-* cualquierotrohost.com/figura.png - devolverán el recurso web/figura.png
-* host1.midominio.com/figura.png - devolverá el recurso web/host1.midominio.com/figura.png
+* cualquierotrohost.com/figura.png - devolverán el recurso 'web/figura.png'
+* host1.midominio.com/figura.png - devolverá el recurso 'web/host1.midominio.com/figura.png'
 
 ### Tipos MIME
 El archivo mime.dkl en la carpeta fastcgi de la instalación de Devkron contiene la manera como deberán tratarse los diferentes tipos de archivos.
