@@ -1,2 +1,2 @@
-# Guía de instalación en Windows x64
+# Instalar Devkron en Windows x64
 
