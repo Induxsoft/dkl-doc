@@ -36,7 +36,7 @@ cd /usr/devkron
 ```bash
 cd /usr/devkron
 ```
-2. Usa el comando dkl.exe con el argumento -fastcgi
+2. Usa el comando dkl con el argumento -fastcgi
 ```bash
 ./dkl -fastcgi
 ```
