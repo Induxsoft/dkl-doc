@@ -45,4 +45,4 @@ cd /usr/devkron
 
 * [Guía de configuración Nginx + Devkron en Linux y Windows](../nginx-fastcgi.md)
 
-* [Guía de configuración de sitios Web con FastCGI de Devkron](../devrkon-fastcgi.md)
+* [Guía de configuración de sitios Web con FastCGI de Devkron](../devkron-fastcgi.md)
