@@ -7,14 +7,14 @@
 
 1. Abre una consola (CMD o PowerShell) y ve a la carpeta donde se encuentran los binarios de Devkron
 2. Usa el comando dkl.exe
-``` CMD
+```CMD
 dkl miprograma.dkl
 ```
 
 ### Iniciar el servicio FastCGI
 1. Abre una consola (CMD o PowerShell) y ve a la carpeta donde se encuentran los binarios de Devkron
 2. Usa el comando dkl.exe con el argumento -fastcgi
-``` CMD
+```CMD
 dkl -fastcgi
 ```
 
