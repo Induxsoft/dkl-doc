@@ -31,7 +31,7 @@ Campos:
 * controller - Indica el program Devkron que controlará las solicitudes y respuestas HTTP, este se encuentra la carpeta 'fastcgi' del directorio de binarios de Devkron.
 
 * address - Indica la dirección IP del equipo en donde escuchará el servicio:
-  *   0.0.0.0 - Escuchar en todas
+  *   0.0.0.0 - Escuchar en todas las IPs disponibles
   *   127.0.0.1 - Escuchar en la loopback (local)
 
 * port - Puerto de escucha (predeterminado el 9090)
