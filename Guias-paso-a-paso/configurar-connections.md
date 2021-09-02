@@ -2,6 +2,7 @@
 En las distribuciones de Devkron autocontenidas (para Linux o Windows) no hay soporte de interfaz de usuario basado en ventanas, por lo que el Administrador de conexiones no está disponible.
 
 Para configurar conexiones deberá hacerlo a través de sus propios programas en Devkron o editando el archivo: 'connections.xml' que debe existir en el directorio de binarios de Devkron.
+
 De manera predeterminada se incluye el archivo 'connections.xml.example' que puede copiar con el nombre 'connections.xml' a manera de plantilla.
 
 ```XML
