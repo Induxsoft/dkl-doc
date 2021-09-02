@@ -5,7 +5,7 @@
 mkdir /usr/devkron
 cd /usr/devkron
 ```
-2. Descarga los binarios de Devrkon para Linux desde: http://devkron.org/descargas/devkron-linux-x64.zip 
+2. Descarga los binarios de Devkron para Linux desde: http://devkron.org/descargas/devkron-linux-x64.zip 
 ```bash
 wget http://devkron.org/descargas/devkron-linux-x64.zip 
 ```
