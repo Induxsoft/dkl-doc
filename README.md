@@ -102,4 +102,4 @@ Esta guía aborda los siguientes temas:
 ### Acceso a bases de datos relacionales
 [Configurar conexiones](Guias-paso-a-paso/configurar-connections.md)
 
-Esta guía explica cómo configurar conexiones en Devkron autocontenido en Línux y Windows
+Esta guía explica cómo configurar conexiones en Devkron autocontenido en Linux y Windows
