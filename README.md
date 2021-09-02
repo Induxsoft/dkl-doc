@@ -74,7 +74,27 @@
   * [Utilidades de generación de interfaz de usuario HTML enlazada a datos](Sitios-y-aplicaciones-Web-con-DKL/uielements.md)
 
 ## Guías paso a paso
-
+### Devkron en Windows con .Net Framework 4.5
 * [Instalar Devkron en Windows con IIS a través de IWA](Guias-paso-a-paso/Windows/Instalar-DKL-Win-IWA.md)
 * [Ejecutar programas (de consola) de Devkron](Guias-paso-a-paso/Windows/ejecutar-consola-dkl.md)
 * [Crear bases de datos, configurar y usar su conexión en Devkron](Guias-paso-a-paso/Windows/crear-db-y-conexion.md)
+
+### Devkron autocontenido en Windows-x64
+[Devkron en Windows](Guias-paso-a-paso/Windows/Instalar-dkl-winx64.md)
+
+Esta guía aborda los siguientes temas:
+  * Instalación en Windows sin IWA
+  * Ejecutar programas de consola
+  * Iniciar el servicio FastCGI
+
+### Devkron autocontenido en Linux-x64
+[Devkron en Linux](Guias-paso-a-paso/Linux/Instalar-dkl-Linux.md)
+
+Esta guía aborda los siguientes temas:
+  * Instalación en Linux
+  * Ejecutar programas de consola
+  * Iniciar el servicio FastCGI
+
+### Devkron FastCGI
+* [Usar Nginx como servidor Web (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
+* [Configuración de la FastCGI de Devkron (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
