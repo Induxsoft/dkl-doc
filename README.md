@@ -98,3 +98,8 @@ Esta guía aborda los siguientes temas:
 ### Devkron FastCGI
 * [Usar Nginx como servidor Web (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
 * [Configuración de la FastCGI de Devkron (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
+
+### Acceso a bases de datos relacionales
+[Configurar conexiones](Guias-paso-a-paso/configurar-connections.md)
+
+Esta guía explica cómo configurar conexiones en Devkron autocontenido en Línux y Windows
