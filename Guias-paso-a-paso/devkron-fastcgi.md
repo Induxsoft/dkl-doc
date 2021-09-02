@@ -26,8 +26,8 @@ De manera predeterminada, el archivo fastcgi.json se encuentra en el directorio 
     "max_header_size":16384
 }
 
-Campos:
 ```
+Campos:
 * controller - Indica el programa Devkron que controlará las solicitudes y respuestas HTTP, este se encuentra la carpeta 'fastcgi' del directorio de binarios de Devkron.
 
 * address - Indica la dirección IP del equipo en donde escuchará el servicio:
