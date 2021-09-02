@@ -68,5 +68,5 @@ El archivo mime.dkl en la carpeta fastcgi de la instalación de Devkron contiene
 El archivo routing.dkl en la carpeta fastcgi permite programar la manera como serán canalizadas las solicicitudes de recursos, incluso cuando los URI no correspondan diractamente con archivos físicos.
 
 ### Ejecución de Scripts
-Todos los archivos con extensión .dkl se consideran programas de Devkron y ejecutados. Cualquier otra extensión es considerada contenido estático y devuelta con los encabezados HTTP del tipo MIME correspondiente.
+Todos los archivos con extensión .dkl se consideran programas de Devkron y son ejecutados para producir contenido dinámico. Cualquier otra extensión es considerada contenido estático y devuelta con los encabezados HTTP del tipo MIME correspondiente.
 
