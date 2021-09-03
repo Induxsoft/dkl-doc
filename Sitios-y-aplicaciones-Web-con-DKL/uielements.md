@@ -147,7 +147,7 @@ using params
   
   //Este miembro contiene la configuración de columnas, 
   //si se omite se muestran todas las columnas de la consulta
-  member @columns
+  member @"columns"
   {
     member @"nombre_columna" // Un miembro por cada columna
     {
