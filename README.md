@@ -96,7 +96,7 @@ Esta guía aborda los siguientes temas:
   * Iniciar el servicio FastCGI
 
 ### Devkron FastCGI
-* [Usar Nginx como servidor Web (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
+* [Usar Nginx como servidor Web (Windows y Linux)](Guias-paso-a-paso/nginx-fastcgi.md)
 * [Configuración de la FastCGI de Devkron (Windows y Linux)](Guias-paso-a-paso/devkron-fastcgi.md)
 
 ### Acceso a bases de datos relacionales
