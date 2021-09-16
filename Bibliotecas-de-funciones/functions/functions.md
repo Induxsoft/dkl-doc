@@ -155,7 +155,8 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **encoding**  Devuelve una referencia a un objeto Encoding de .Net con base en la cadena dada  **encoding(codificación)**| **codificación** – Cadena (constante) que indica la codificación a usar: utf8,utf7, utf32, Unicode o ascii|
 | **encryp**  Devuelve una cadena encriptada con la clave dada  **encryp(cadena, clave)**| **cadena** – Cadena a encriptar  **clave** – Cadena que contiene la clave de encriptación|
 | **decryp**  Devuelve una cadena desencriptada con la clave dada  **decryp(cadena,clave)**| **cadena** – Cadena a desencriptar  **clave** – Cadena que contiene la clave de encriptación|
-| **md5**  Devuelve la firma md5 de la cadena  **md5(cadena)**| **cadena** –Cadena de texto|
+| **md5**  Devuelve la firma md5 de la cadena (considerada una secuencia de bytes ASCII) **md5(cadena)**| **cadena** –Cadena de texto|
+| **md5e**  Devuelve la firma md5 de la cadena como secuencia de bytes codificados como se indique.  **md5e(cadena,codificacion)**| **cadena** –Cadena de texto **codificación** –Cadena que indica el nombre de la codificación de la secuencia de bytes de entrada para la digestión, los valores posibles son los mismos que los requeridos por la función encoding.|
 | **uuid**  Devuelve una cadena que representa un Identificado Global Único de 128bits.  **uuid()**| Sin argumentos|
 | **hmacsha256**  Devuelve una cadena que representa el HMAC de un mensaje con cifrado SHA 256  **hmacsha256(mensaje, clave)**| **mensaje** – Cadena de texto  **clave** – Clave de cifrado|
 
