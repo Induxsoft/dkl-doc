@@ -38,7 +38,7 @@ Vea cómo se han declarado estas variables en el archivo functions.dkh
 @(fieldpath)
 ```
 
-Permite obtener el valor de un campo del registro de contexto ```@_context```
+Permite obtener el valor de un campo del registro de contexto ```@__context```
 - fieldpath es una cadena con la ruta del miembro cuyo valor se quiere obtener
 
 Para indicar el tipo del valor a obtener use los siguientes prefijos en ```fieldpath```:
@@ -47,7 +47,7 @@ Para indicar el tipo del valor a obtener use los siguientes prefijos en ```field
 - ```$``` Para obtener un valor de cadena (opcional)
 
 En algunas ocasiones resultará más sencillo acceder a valores (miembros) de un registro global (de contexto).
-El registro de contexto es una variable global denominada ```@_context``` que puede establecer previamente como una referencia a una estructura,
+El registro de contexto es una variable global denominada ```@__context``` que puede establecer previamente como una referencia a una estructura,
 para usarla con la función ```@```
 
 Ejemplo:
@@ -64,7 +64,7 @@ using miestructura
  }
 }
 
-ref @_context=miestructura // Establecer el registro de contexto para la función @
+ref @__context=miestructura // Establecer el registro de contexto para la función @
 
 // Obtiene miembros como cadenas, observe que el uso del prefijo $ es opcional
 nombrecompleto=@("nombre") + " " + @("$apellidos") 
