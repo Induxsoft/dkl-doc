@@ -30,6 +30,97 @@ Vea cómo se han declarado estas variables en el archivo functions.dkh
 
 ## Registros (estructuras)
 
+
+
+**Función @**
+
+```
+@(fieldpath)
+```
+
+Permite obtener el valor de un campo del registro de contexto ```@_context```
+- fieldpath es una cadena con la ruta del miembro cuyo valor se quiere obtener
+
+Para indicar el tipo del valor a obtener use los siguientes prefijos en ```fieldpath```:
+- ```&``` Para obtener una referencia
+- ```#``` Para obtener un valor numérico
+- ```$``` Para obtener un valor de cadena (opcional)
+
+En algunas ocasiones resultará más sencillo acceder a valores (miembros) de un registro global (de contexto).
+El registro de contexto es una variable global denominada ```@_context``` que puede establecer previamente como una referencia a una estructura,
+para usarla con la función ```@```
+
+Ejemplo:
+
+``` DKL
+using miestructura
+{
+ @"nombre":"Juan"
+ @"apellidos":"Pérez López"
+ @"edad":38
+ member @conyuge
+ {
+    @"nombre":"Lupita"
+ }
+}
+
+ref @_context=miestructura // Establecer el registro de contexto para la función @
+
+// Obtiene miembros como cadenas, observe que el uso del prefijo $ es opcional
+nombrecompleto=@("nombre") + " " + @("$apellidos") 
+
+//Obtiene un miembro como número
+edad=@("#edad")
+
+//Obtiene una referencia
+ref conyuge=@("&conyuge")
+
+//Obtiene un miembro de un miembro
+nombre_conyuge=@("conyuge/nombre")
+```
+
+**Función @@**
+
+```
+@@(referencia, fieldpath)
+```
+
+Permite obtener el valor de un campo del registro indicado en ```referencia```
+- referencia es una referencia a un registro (estructura de datos)
+- fieldpath es una cadena con la ruta del miembro cuyo valor se quiere obtener
+
+Para indicar el tipo del valor a obtener use los siguientes prefijos en ```fieldpath```:
+- ```&``` Para obtener una referencia
+- ```#``` Para obtener un valor numérico
+- ```$``` Para obtener un valor de cadena (opcional)
+
+Ejemplo:
+
+``` DKL
+using miestructura
+{
+ @"nombre":"Juan"
+ @"apellidos":"Pérez López"
+ @"edad":38
+ member @conyuge
+ {
+    @"nombre":"Lupita"
+ }
+}
+
+// Obtiene miembros como cadenas, observe que el uso del prefijo $ es opcional
+nombrecompleto=@@(miestructura,"nombre") + " " + @@(miestructura,"$apellidos") 
+
+//Obtiene un miembro como número
+edad=@@(miestructura,"#edad")
+
+//Obtiene una referencia
+ref conyuge=@@(miestructura,"&conyuge")
+
+//Obtiene un miembro de un miembro
+nombre_conyuge=@@(miestructura,"conyuge/nombre")
+```
+
 |**field.remove**  Elimina el campo indicado del registro y devuelve @true si tuvo éxito.  **field.remove(registro,campo)** | **registro** – Referencia a un registro (estructura)  **campo** – Cadena que identifica el nombre del campo a eliminar, se admite la notación de rutas “campo/campo/campo” para acceder a miembros dentro de otros miembros.|
 |------------|-----------|
 | **field.exist**  Devuelve @true si el campo indicado existe en el registro.  **field.exist(registro,campo)**| **registro** – Referencia a un registro (estructura)  **campo** – Cadena que identifica el nombre del campo a buscar, se admite la notación de rutas “campo/campo/campo” para acceder a miembros dentro de otros miembros.|
