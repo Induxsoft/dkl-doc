@@ -34,4 +34,9 @@ new mail
         @"subject":"Asunto del mensaje" 
         @"body":"Cuerpo html del mensaje"
     }
+    
+    //Ejemplo para agregar archivos adjuntos
+    ref archivos=list.create()
+    do list.add(archivos,"c:\\carpeta\\archivo.ext")
+    mail<"attatchments*">archivos
 ```
