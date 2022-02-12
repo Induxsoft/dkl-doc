@@ -38,5 +38,5 @@ new mail
     //Ejemplo para agregar archivos adjuntos
     ref archivos=list.create()
     do list.add(archivos,"c:\\carpeta\\archivo.ext")
-    mail<"attatchments*">archivos
+    mail<"attatchments*">:archivos
 ```
