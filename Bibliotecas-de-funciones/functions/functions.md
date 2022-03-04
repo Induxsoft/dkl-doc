@@ -271,7 +271,7 @@ Las tablas (en memoria) se implementan a través de las clases de System.Data.Da
 | **dir.name**  Devuelve el nombre del directorio indicado  **dir.name(directorio)** | **directorio** – Cadena con el nombre y ruta de un directorio|
 | **file.justname**  Devuelve solo el nombre (sin extensión) del archivo indicado  **file.justname(archivo)**| **archivo** – Cadena con el nombre y ruta de un archivo|
 | **list.dirs**  Devuelve una referencia a una lista de cadenas que contiene todos los nombres de directorios de la ubicación indicada.  **list.dirs(ruta)** | **ruta** – Cadena con el nombre y ruta de un directorio|
-| **list.files**  Devuelve una referencia a una lista de cadenas que contiene todos los nombres de archivos de la ubicación indicada.  **list.files(ruta)** | **ruta** – Cadena con el nombre y ruta de un directorio|
+| **list.files**  Devuelve una referencia a una lista de cadenas que contiene todos los nombres de archivos de la ubicación indicada.  **list.files(ruta,filtro)** | **ruta** – Cadena con el nombre y ruta de un directorio **filtro**-cadena de expresión de filtro|
 | **dir.ensure**  Verifica si un directorio existe y si no lo crea.  **dir.ensure(directorio)** | **ruta** – Cadena con el nombre y ruta de un directorio|
 | **file.copy**  Copia el archivo indicado y sobrescribe el destino en caso de que exista.  **file.copy(origen, destino)** | **origen** – Cadena con el nombre y ruta de un archivo  **destino** – Cadena con el nombre y ruta de un archivo|
 | **file.wtext**  Escribe la cadena de texto indicada en el archivo especificado con codificación utf8 sin BOM, si el archivo ya existe lo sobrescribe.  **file.wtext(archivo, texto)** | **archivo** – Cadena con el nombre y ruta de un archivo  **texto** – Cadena de texto|
