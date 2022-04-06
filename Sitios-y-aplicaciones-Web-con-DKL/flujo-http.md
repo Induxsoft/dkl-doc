@@ -193,7 +193,7 @@ Si requiere establecer lógica de autorización para los recursos de un sitio We
 
 Un archivo ```auth.dk``` es un programa DKL que recibe una variable global llamada ```@http_request``` que permitirá controlar el flujo de la solicitud.
 
-Desencadenar una excepción con la función rise_error provocará la detención del flujo de la solicitud y es en la mayoría de los casos, la mejor opción para restringir el acceso a un recurso.
+Desencadenar una excepción con la función DKL ```rise_error``` provocará la detención del flujo de la solicitud y es en la mayoría de los casos, la mejor opción para restringir el acceso a un recurso.
 
 ## Post-procesamiento centralizado
 
@@ -207,8 +207,8 @@ Un escenario común de utilización de un archivo ```render.dk``` sería por eje
 
 El programa ```render.dk``` a diferencia de los demás archivos ```.dk``` que reconoce el servidor Devkron FastCGI, NO recibe la variable ```@http_request``` (porque la solicitud ya ha sido completada), en su lugar obtiene la conocida variable global ```@http_context```.
 
-## Variable @http_request
-Esta variable global es el mecanismo mediante el cual el programa http.dkl permite el control del flujo de la solicitud y solo está disponible para los programas ```routing.dk``` y ```auth.dk```. En todos los demás casos la variable que representa el contexto completo es @http_context.
+## Variable ```@http_request```
+Esta variable global es el mecanismo mediante el cual el programa ```http.dkl``` permite el control del flujo de la solicitud y solo está disponible para los programas ```routing.dk``` y ```auth.dk```. En todos los demás casos la variable que representa el contexto completo es ```@http_context```.
 
 Campos de ```@http_request```
 
