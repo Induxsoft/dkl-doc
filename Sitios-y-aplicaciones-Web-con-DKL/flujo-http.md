@@ -23,7 +23,7 @@ HTTP es un protocolo sin estado basado en texto, cuya especificación es públic
 
 La carpeta protegida del sitio Web es de manera predeterminada ```/_protected```, puede cambiar este valor a través de la variable global ```@http_protected_dir```  definida en ```http.dkl```
 
-Como seguramente ya sabe, al instalar el servidor Devkron FastCGI se crea la carpeta web en la ubicación de los binarios, deberá crear una carpeta con el nombre de cada Host gestionado, por ejemplo para el sitio Web ```churrumaisconlimoncito.com```, tendrá la ruta: ```instalación_devkron/web/churrumaisconlimoncito.com/```
+Como seguramente ya sabe, al instalar el servidor Devkron FastCGI se crea la carpeta ```web``` en la ubicación de los binarios, deberá crear una carpeta con el nombre de cada Host gestionado, por ejemplo para el sitio Web ```churrumaisconlimoncito.com```, tendrá la ruta: ```instalación_devkron/web/churrumaisconlimoncito.com/```
 
 Si lo requiere, deberá crear la carpeta protegida y colocar ahí los archivos que necesita, por ejemplo:  
 ```instalación_devkron/web/churrumaisconlimoncito.com/_protected/routes.map```
