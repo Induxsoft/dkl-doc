@@ -114,7 +114,7 @@ La sintaxis de una regla es:
 
 En donde:
 *	Métodos HTTP. Es un argumento opcional, que contiene uno o más nombres de métodos HTTP (GET, POST, etc.) delimitados por comas
-*	Patró_nURI. Es una cadena al estilo de una ruta que puede señalizar parámetros.
+*	Patrón_URI. Es una cadena al estilo de una ruta que puede señalizar parámetros.
 *	ProgramaDKL. Es el nombre y ruta relativa o absoluta del programa que será ejecutado por el servidor Devkron FastCGI
 
 Ejemplo:
