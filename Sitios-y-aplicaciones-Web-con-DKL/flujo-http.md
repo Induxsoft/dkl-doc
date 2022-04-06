@@ -4,8 +4,8 @@
 
 El flujo solicitud (request)/respuesta (response) HTTP gestionado a través de Devkron FastCGI Server se describe de la siguiente manera:
 1. Un cliente HTTP envía al servidor Web una solicitud
-2. El servidor Web; según se ha configurado; transfiere la solicitud HTTP al “servidor ascendente” a través del protocolo FastCGI/TCP IP 
-3. El “servidor ascendente” es el servidor Devkron FastCGI que reúne toda la información de contexto de la solicitud HTTP y la proporciona al programa http.dkl
+2. El servidor Web; según se ha configurado; transfiere la solicitud HTTP al "servidor ascendente" a través del protocolo FastCGI/TCP IP 
+3. El "servidor ascendente" es el servidor Devkron FastCGI que reúne toda la información de contexto de la solicitud HTTP y la proporciona al programa http.dkl
 4. El programa http.dkl se apoya en los siguientes programas (en orden):
     -  alias.dkl determina la lógica aplicable en el caso de alias de hosts configurados.
     -  mime.dkl establece la manera como serán tratados los diferentes tipos de archivos que hayan sido solicitados y el encabezado de tipo de contenido a responder
