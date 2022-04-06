@@ -171,7 +171,7 @@ Ejemplo:
 
 #### Prioridad de reglas
 
-La única prioridad de las reglas está establecida por el orden en que están dispuestas en el archivo routes.map, por lo que la primera que coincida será la que se active.
+La única prioridad de las reglas está establecida por el orden en que están dispuestas en el archivo ```routes.map```, por lo que la primera que coincida será la que se active.
 
 #### Tratamiento como comentarios
 
