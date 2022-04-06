@@ -79,6 +79,7 @@ Las reglas siguientes son equivalentes (y aplican a todos los métodos):
 ```*: .api > servicios/servicio_api.dkl```
 
 ```any: .api > servicios/servicio_api.dkl```
+
 ```.api > servicios/servicio_api.dkl```
 
 #### Comodines para el nombre del recurso
