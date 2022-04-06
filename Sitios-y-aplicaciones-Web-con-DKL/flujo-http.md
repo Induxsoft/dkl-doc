@@ -155,7 +155,7 @@ Ejemplo:
 ```/services/customers/{id_cliente?} > /_protected/addorupdate.dkl```
 
 #### Parámetros numéricos
-Si desea indicar que el parámetro de una regla debe ser numérico anteponga el carácter #al nombre.
+Si desea indicar que el parámetro de una regla debe ser numérico anteponga el carácter ```#``` al nombre.
 
 Ejemplo:
 
