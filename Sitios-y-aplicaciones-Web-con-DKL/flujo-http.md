@@ -28,7 +28,7 @@ Como seguramente ya sabe, al instalar el servidor Devkron FastCGI se crea la car
 Si lo requiere, deberá crear la carpeta protegida y colocar ahí los archivos que necesita, por ejemplo:  
 ```instalación_devkron/web/churrumaisconlimoncito.com/_protected/routes.map```
 
-Si algún archivo del sistema (ext.map, routes.map, routing.dk, auth.dk o render.dk) no existe o no existe la carpeta protegida, Devkron FastCGI simplemente continuará normalmente asumiendo una correspondencia entre cada recurso solicitado en el URI con la estructura de carpetas del sitio Web.
+Si algún archivo del sistema (```ext.map```, ```routes.map```, ```routing.dk```, ```auth.dk``` o ```render.dk```) no existe o no existe la carpeta protegida, Devkron FastCGI simplemente continuará normalmente asumiendo una correspondencia entre cada recurso solicitado en el URI con la estructura de carpetas del sitio Web.
 
 Ningún recurso en la carpeta protegida será entregado por el servidor Devkron FastCGI directamente, por lo que el URI: ```https://churrumaisconlimoncito.com/_protected/routes.map``` devolverá el error "Acceso prohibido" al navegador del usuario.
 
