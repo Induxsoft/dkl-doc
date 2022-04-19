@@ -22,9 +22,10 @@ la que se haya especificado en los parámetros de la URL (GET) si están admitid
 * search. Una cadena que será buscada en el contenido de archivos
 * mode. Numérico: 0 (predeterminado) - Devuelve archivos y carpetas, 1-Solo carpetas, 2- Solo archivos y 3-Solo resultados de búsqueda en archivos
 * base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
 * uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
 
-De manera predeterminada, el parámetro base_path en la URL es ignorado a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
 
 Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio lst.fso.
 
@@ -33,21 +34,89 @@ Se requiere que el usuario esté autenticado y cuente con alguno de los siguient
 
 * dkl_fso_list
 * read + plus
+* write
 * admin
 
+Ejemplos:
 
-Ejemplo:
+```
 https://misitioweb.tld/lst.fso
+https://misitioweb.tld/lst.fso?filter=*.txt
+https://misitioweb.tld/lst.fso?search=guanabanas&filter=*.txt&mode=3
+```
 
 ### Obtener metadatos de una carpeta o archivo
+
+Devuelve un objeto JSON con los metadatos de un archivo o carpeta
+
 End point: uri/get.fso
 
 Método HTTP: GET
 
+#### Parámetros GET admitidos (todos son opcionales):
+* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
+* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+
+Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio get.fso.
+
+#### Privilegios requeridos
+Se requiere que el usuario esté autenticado y cuente con alguno de los siguientes:
+
+* dkl_fso_getprops
+* read + plus
+* write
+* admin
+
+Ejemplo:
+
+```
+https://misitioweb.tld/documento.docx/get.fso
+```
+
 ### Establecer metadatos de una o varias carpetas o archivos
+
 End point: uri/set.fso
 
 Método HTTP: POST o PUT
+
+Cuerpo de la solicitud (payload):
+```
+Content-Type: application/json;charset=utf-8
+{
+	"uri1":{
+    "properties":{"clave":"valor",...}
+    "privileges":{
+      "write":[{"user":"admin",...},...]
+      }
+    },
+	"uri2":{...},
+  ...
+  "uriN":{...}
+}
+```
+
+Se admiten los siguientes parámetros en la URL de solicitud (todos son opcionales):
+
+* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
+* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+
+Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio set.fso.
+
+Respuesta:
+```
+Content-Type: application/json;charset=utf-8
+{
+    "uri1":{"props_done":true, "privs_done":true },
+    ...
+}
+```
+
 
 ### Subir uno o varios archivos
 End point: uri/upl.fso
@@ -98,6 +167,7 @@ Devuelve un objeto con toda la información de carpetas y archivos, es la misma 
 
 * base_path. (Requerido) Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
 * uri. (Requerido) Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base, si se indica este parámetro no se ignorará base_path por lo que este último puede excluirse.
 * filter. (Opcional) Una cadena de filtro para los archivos, p.e. *.txt
 * deep. (Opcional) Numérico que indica la profundidad de búsqueda en sub-carpetas, predeterminado 999 
 * search. (Opcional) Una cadena que será buscada en el contenido de archivos
