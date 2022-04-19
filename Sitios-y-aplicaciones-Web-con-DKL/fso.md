@@ -112,8 +112,12 @@ Respuesta:
 ```
 Content-Type: application/json;charset=utf-8
 {
-    "uri1":{"props_done":true, "privs_done":true },
-    ...
+	"success":true,
+	"data":
+	{
+    		"uri1":{"props_done":true, "privs_done":true },
+    		...
+	}
 }
 ```
 
