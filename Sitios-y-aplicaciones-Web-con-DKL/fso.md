@@ -11,6 +11,8 @@ La extensión .fso está dirigida hacia los programas de la API FSO que exponen 
 ### Listar carpetas y/o archivos
 End point: uri/lst.fso
 
+Método HTTP: GET
+
 Devuelve un objeto JSON con información del contenido de la URI desde la que se invocó o bien,
 la que se haya especificado en los parámetros de la URL (GET) si están admitidos.
 
@@ -37,3 +39,22 @@ Se requiere que el usuario esté autenticado y cuente con alguno de los siguient
 Ejemplo:
 https://misitioweb.tld/lst.fso
 
+### Obtener metadatos de una carpeta o archivo
+End point: uri/get.fso
+
+Método HTTP: GET
+
+### Establecer metadatos de una o varias carpetas o archivos
+End point: uri/set.fso
+
+Método HTTP: POST o PUT
+
+### Subir uno o varios archivos
+End point: uri/upl.fso
+
+Método HTTP: POST o PUT
+
+### Eliminar, copiar, mover o renombrar
+End point: uri/do.fso
+
+Método HTTP: POST o PUT
