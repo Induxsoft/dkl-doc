@@ -4,13 +4,13 @@ Habilita un modelo coherente de acceso a los recursos del sitio Web.
 
 Se basa en el Resourse Access Authorization Model (RAAM) de Induxsoft
 
-##Componentes
+## Componentes
 
 * Proveedor de identidades (IDP). Verifica la validez de un identificador (token) de sesión y recupera información del usuario.
 * API de Operaciones del Sistema de Archivos (FSO API). Proporciona un mecanismo para gestionar privilegios y metadatos, así como realizar operaciones sobre los archivos y carpetas del sitio Web.
 * Controlador de autorizaciones (auth.dk). Autoriza el acceso a los recursos y reúne información de sesión apoyándose en el IDP y la API de FSO.
 
-##Flujo de autorización
+## Flujo de autorización
 Aprovechando el modelo del flujo de la solicitud HTTP de Devkron, el programa auth.dk provisto en la BWL agrega el miembro ```session``` al objeto ```@http_context``` con información del usuario y el recurso solicitado.
 
 auth.dk cargará el programa del IDP que deberá agregar al miembro ```session``` el campo ```user``` si es posible recuperar un token de sesión válido.
