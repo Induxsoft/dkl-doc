@@ -1,6 +1,6 @@
 # File System Operations (FSO) API
 
-Implementa los servicios de un Resource Directory (según el RAAM de Induxsoft) a través de una API pública (web services) y
+Implementa los servicios de un Resources Directory (según el RAAM de Induxsoft) a través de una API pública (web services) y
 privada (biblioteca de funciones).
 
 ## Enrutamiento público
