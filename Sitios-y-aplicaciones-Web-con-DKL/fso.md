@@ -61,6 +61,30 @@ Método HTTP: POST o PUT
 
 ## Funciones disponibles en fso.dk
 
+fso.dk contiene las siguientes funciones de interés para el programador del back-end:
+
+### dklfso.isprotected::uri
+Devuelve ```@true``` si la cadena uri indicada es una subcarpeta o archivo en una subcarpeta del carpeta protegida del sitio Web.
+
+### dklfso.createObjectInfo::base_path,uri
+Devuelve una referencia a una estructura de datos con toda la información de metadatos de un archivo o carpeta en el sistema local, o bien @null si no se encuentra el recurso.
+
+* base_path - Es una cadena que representa la ruta de base del sitio Web en el sistema local
+* uri - Es una cadena que representa la ruta relativa a base_path del recurso (archivo o carpeta) en el sistema local
+
+### dklfso.list::&params
+Devuelve un objeto con toda la información de carpetas y archivos, es la misma respuesta que el servicio lst.fso invocado desde el propio backend.
+
+```params``` es una referencia a una estructura que puede tener los siguientes parámetros:
+
+* base_path. (Requerido) Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* uri. (Requerido) Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+* filter. (Opcional) Una cadena de filtro para los archivos, p.e. *.txt
+* deep. (Opcional) Numérico que indica la profundidad de búsqueda en sub-carpetas, predeterminado 999 
+* search. (Opcional) Una cadena que será buscada en el contenido de archivos
+* mode. (Opcional) Numérico: 0 (predeterminado) - Devuelve archivos y carpetas, 1-Solo carpetas, 2- Solo archivos y 3-Solo resultados de búsqueda en archivos
+
+
 ## Metadatos
 Los metadatos asociados a una carpeta o archivo son propiedades extendidas (clave/valor) o el manifiesto de privilegios.
 
