@@ -58,3 +58,30 @@ Método HTTP: POST o PUT
 End point: uri/do.fso
 
 Método HTTP: POST o PUT
+
+## Funciones disponibles en fso.dk
+
+## Metadatos
+Los metadatos asociados a una carpeta o archivo son propiedades extendidas (clave/valor) o el manifiesto de privilegios.
+
+### Propiedades extendidas
+Se almacenan en archivos en formato JSON con extensión ```._m_``` a menos que indique lo contrario en fso.config.dk
+
+Las propiedades extendidas de una carpeta se encuentran en el archivo ```._m_``` (archivo sin nombre, solo extensión) dentro de la misma.
+
+Para las propiedades extendidas de los archivos, se emplean archivos con el mismo nombre y extensión, más la extensión ```._m_```, p.e. para un archivo denominado ```notas.docx```, existirá un archivo de propiedades extendidas llamado ```notas.docx._m_```
+
+Si no existe el archivo ```._m_``` de propiedades extendidas, las únicas propiedades del archivo o carpeta son las que corresponden al sistema de archivos: nombre (incluyendo extensión), fecha y hora de creación, fecha y hora de último acceso y fecha y hora de última escritura (todas las fechas y horas en formato UTC)
+
+### Manifiesto de privilegios
+Se almacenan en archivos en formato JSON con extensión ```._p_``` a menos que indique lo contrario en fso.config.dk
+
+El manifiesto de privilegios de una carpeta se encuentran en el archivo ```._p_``` (archivo sin nombre, solo extensión) dentro de la misma.
+
+Para el manifiesto de privilegios de los archivos, se emplean archivos con el mismo nombre y extensión, más la extensión ```._p_```, p.e. para un archivo denominado ```notas.docx```, existirá un archivo de manifiesto de privilegios llamado ```notas.docx._p_```
+
+Si no existe un archivo de manifiesto de privilegios para un archivo o carpeta, aplica la herencia ascendente, es decir, se heredan los privilegios del manifiesto de la carpeta padre y si no existe, entonces la del padre del padre, etc.
+
+### Importante
+
+Ni los archivos de propiedades extendidas ni los archivos de manifiesto de privilegios se generan o existen de forma predeterminada, deberá crearlos manualmente o a través del servicio set.fso 
