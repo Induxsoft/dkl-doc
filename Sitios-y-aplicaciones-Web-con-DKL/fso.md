@@ -17,7 +17,7 @@ Devuelve un objeto JSON con información del contenido de la URI desde la que se
 la que se haya especificado en los parámetros de la URL (GET) si están admitidos.
 
 #### Parámetros GET admitidos (todos son opcionales):
-* filer. Una cadena de filtro para los archivos, p.e. *.txt
+* filter. Una cadena de filtro para los archivos, p.e. *.txt
 * deep. Numérico que indica la profundidad de búsqueda en sub-carpetas, predeterminado 999 
 * search. Una cadena que será buscada en el contenido de archivos
 * mode. Numérico: 0 (predeterminado) - Devuelve archivos y carpetas, 1-Solo carpetas, 2- Solo archivos y 3-Solo resultados de búsqueda en archivos
