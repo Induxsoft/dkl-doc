@@ -61,6 +61,25 @@ Método HTTP: POST o PUT
 
 ## Funciones disponibles en fso.dk
 
+fso.dk requiere que previamente se incluya el archivo de configuraciones fso.config.dk y depende de functions.dkh, serialize.dkh y webauth.dkl
+
+Ejemplo:
+
+```
+#include "dkli.dkh"
+#!
+program "ejemplo"
+{
+  #include "functions.dkh"
+  #include "serialize.dkh"
+  #include "webauth.dkl"
+
+  #include "_protected/fso/fso.config.dk"
+  #include "_protected/fso/fso.dk"
+
+  //..su código
+}
+```
 fso.dk contiene las siguientes funciones de interés para el programador del back-end:
 
 ### dklfso.isprotected::uri
