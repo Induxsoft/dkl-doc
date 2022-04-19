@@ -123,9 +123,43 @@ Content-Type: application/json;charset=utf-8
 
 
 ### Subir uno o varios archivos
+
+Este servicio permite subir archivos codificados como ```multipart/form-data``` en la ubicación (URI) de carpeta indicada.
+
+Si los archivos ya existen, serán sobre-escritos (si el usuario que invoca el servicio tiene los privilegios suficientes).
+
 End point: uri/upl.fso
 
 Método HTTP: POST o PUT
+Content-Type: multipart/form-data
+
+Fragmento HTML de ejemplo:
+``` html
+<html>
+    <body>
+        <h1>Ejemplo: Subir archivo</h1>
+        <form action="upl.cmd" enctype="multipart/form-data" method="POST">
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+```
+
+Ejemplo de respuesta (JSON) tras enviar dos archivos:
+
+```
+Content-Type: application/json;charset=utf-8
+{
+	"success":true,
+	"data":
+	{
+    		"nombre_archivo1":{"done":true},
+		"nombre_archivo2":{"done":false,"message":"No autorizado"},
+    		...
+	}
+}
+```
 
 ### Eliminar, copiar, mover o renombrar
 End point: uri/do.fso
