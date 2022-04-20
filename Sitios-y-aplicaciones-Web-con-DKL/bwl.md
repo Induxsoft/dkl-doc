@@ -72,3 +72,19 @@ El siguiente bloque en JSON ilustra el contenido del objeto ```@http_context``` 
     }
 }
 ```
+
+## Acerca de los 4 Privilegios básicos
+
+BWL prevé la existencia de 4 privilegios básicos:
+
+* read - Solo lectura, este es el único privilegio que NO DEBE establecer explícitamente para que se permita al servidor responder contenido sin requerir autenticación.
+* write - Escritura
+* plus - Propósito general, usualmente empleado para elevar a otro privilegio, por ejemplo read+plus sería "casi" equivalente a write
+* admin - Administrador del sistema (sin restricciones).
+
+auth.dk únicamente verifica el privilegio 'read', la validación de los demás corre a cargo de la API FSO o se deja bajo la responsabilidad de otras capas de aplicación.
+
+Por convención impuesta por la BWL y compatibilidad, si se definen privilegios adicionales para operaciones específicas, debe proporcionarse un *Mapa de resolución de privilegios* para poder resolver siempre cualquier privilegio personalizado definido por capas superiores en términos de los 4 privilegios básicos. Un ejemplo es FSO API que define privilegios propios, pero también a la función ```dklfso.authOp``` que contiene la lógica del mapa de resolución de privilegios.
+
+
+
