@@ -38,8 +38,8 @@ program
 
 Asignará a la variable t el token de una sesión que se encuentre disponible según el siguiente orden de búsqueda:
 
-1. Se buscará el parámetros en la url (GET) ids, luego
-2. Se buscará el parámetros en la url (GET) token, luego
+1. Se buscará el parámetro de la url (GET) ids, luego
+2. Se buscará el parámetro de la url (GET) token, luego
 3. En una cooki denominada '__induxsoft_token', luego
 4. En un campo en el cuerpo de la solicitud codificado como 'x-www-form-urlencoded' llamado 'session_id'
 5. En el encabezado HTTP 'Authorization' según la [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750), luego
