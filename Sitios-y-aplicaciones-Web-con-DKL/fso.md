@@ -82,6 +82,16 @@ End point: uri/set.fso
 
 Método HTTP: POST o PUT
 
+Se admiten los siguientes parámetros en la URL de solicitud (todos son opcionales):
+
+* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
+* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+
+Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio set.fso.
+
 Cuerpo de la solicitud (payload):
 ```
 Content-Type: application/json;charset=utf-8
@@ -98,17 +108,24 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
-Se admiten los siguientes parámetros en la URL de solicitud (todos son opcionales):
+Las claves "uri1",..."uriN" del cuerpo de la solicitud y que indican los recursos a actualizar, son relativas a la uri de la URL a menos que inicien con el caracter ```/```. Para indicar que el recurso a afectar es la URL desde la que se invoca el servicio, use como clave ```.```.
 
-* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
-* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
-* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+Ejemplos:
 
-De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+Asumiendo la URL de solicitud como: ```https://misitioweb.tld/carpeta_ejemplo/set.fso```
 
-Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio set.fso.
+Las uri de los recursos a afectar indicadas:
 
-Respuesta:
+```
+{
+	".":{ -- Afecta a la carpeta 'carpeta_ejemplo' -- },
+	"subcarpeta/archivo.txt":{ -- Afecta al archivo '/carpeta_ejemplo/subcarpeta/archivo.txt' -- }
+	"notas.txt":{ -- Afecta al archivo '/carpeta_ejemplo/notas.txt' -- }
+	"/otra_carpeta/texto.txt":{ -- Afecta al archivo '/otra_carpeta/texto.txt' -- }
+}
+```
+
+Respuesta de ejemplo:
 ```
 Content-Type: application/json;charset=utf-8
 {
@@ -121,6 +138,12 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
+#### Privilegios requeridos
+Se requiere que el usuario esté autenticado y cuente con alguno de los siguientes:
+
+* dkl_fso_setprops
+* write
+* admin
 
 ### Subir uno o varios archivos
 
@@ -132,6 +155,17 @@ End point: uri/upl.fso
 
 Método HTTP: POST o PUT
 Content-Type: multipart/form-data
+
+Se admiten los siguientes parámetros en la URL de solicitud (todos son opcionales):
+
+* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
+* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+
+
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+
+Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio upl.fso.
 
 Fragmento HTML de ejemplo:
 ``` html
@@ -161,10 +195,98 @@ Content-Type: application/json;charset=utf-8
 }
 ```
 
-### Eliminar, copiar, mover o renombrar
+#### Privilegios requeridos
+Se requiere que el usuario esté autenticado y cuente con alguno de los siguientes:
+
+* dkl_fso_upload
+* write
+* admin
+
+Adicionalmente, para permitir subir archivos de extensiones consideradas de riesgo configuradas en la variable ```@dklfso_danger_files_ext``` de fso.config.dk, se requiere alguno de los siguientes:
+
+* dkl_fso_danger
+* write + plus
+* admin
+
+### Acciones sobre el sistema de archivos
+
+Este servicio permite las siguientes acciones directamente sobre el sistema de archivos:
+
+* Crear una carpeta
+* Eliminar una carpeta y todo su contenido
+* Copiar un archivo
+* Mover un archivivo
+* Renombrar un archivo
+* Eliminar un archivo
+
 End point: uri/do.fso
 
 Método HTTP: POST o PUT
+
+Se admiten los siguientes parámetros en la URL de solicitud (todos son opcionales):
+
+* base_path. Una cadena con la ruta del sistema local (en el servidor) usada como base para la uri
+* host. Una cadena con el nombre de un host en el servidor para tomar su ubicación de archivos como base.
+* uri. Una cadena que representa un URI concatenado sobre la ruta de base (base_path) para la obtención de resultados
+
+
+De manera predeterminada, los parámetros en la URL base_path y host son excluyentes entre sí y son ignorados a menos que establezca ```@dklfso_multisites=@true``` en fso.config.dkl
+
+Si se omite el parámetro uri, se asume que la URI es la que corresponde a la invocación del servicio do.fso.
+
+
+
+Las claves "uri1",..."uriN" del cuerpo de la solicitud y que indican los recursos a actualizar, son relativas a la uri de la URL a menos que inicien con el caracter ```/```. Para indicar que el recurso a afectar es la URL desde la que se invoca el servicio, use como clave ```.```.
+
+Cuerpo de la solicitud (payload):
+```
+Content-Type: application/json;charset=utf-8
+{
+	"uri1":{ "action":"delete" },
+	"uri2":{ "action":"mkdir" },
+	"uri3":{ "action":"copy", "to":"uri_destino"},
+	"uri4":{ "action":"move", "to":"uri_destino"},
+	"uri5":{ "action":"rename", "as":"nuevo_nombre"}
+  ...
+  "uriN":{...}
+}
+```
+
+Ejemplo de respuesta (JSON):
+
+```
+Content-Type: application/json;charset=utf-8
+{
+	"success":true,
+	"data":
+	{
+    		"uri1":{"done":true},
+		"uri2":{"done":false,"message":"No autorizado"},
+    		...
+	}
+}
+```
+
+#### Privilegios requeridos
+Se requiere que el usuario esté autenticado y cuente con alguno de los siguientes:
+
+* dkl_fso_mkdir - Para crear carpetas
+* dkl_fso_copy - Para copiar archivos
+* dkl_fso_move - Para mover archivos
+* dkl_fso_delete - Para eliminar archivos y carpetas
+* dkl_fso_rename - Para renombrar archivos
+* dkl_fso_overwrite - Para sobrescribir archivos en el destino al copiar o mover
+* write (crear carpetas, copiar, mover, eliminar, sobrescribir y renombrar)
+* write + plus (Igual que write, pero incluyendo extensiones de archivos con extensiones de riesgo)
+* admin (Igual que write + plus)
+
+
+Adicionalmente, para permitir escribir o renombrar archivos con extensiones consideradas de riesgo configuradas en la variable ```@dklfso_danger_files_ext``` de fso.config.dk, se requiere alguno de los siguientes:
+
+* dkl_fso_danger
+* write + plus
+* admin
+
 
 ## Funciones disponibles en fso.dk
 
@@ -236,3 +358,11 @@ Si no existe un archivo de manifiesto de privilegios para un archivo o carpeta, 
 ### Importante
 
 Ni los archivos de propiedades extendidas ni los archivos de manifiesto de privilegios se generan o existen de forma predeterminada, deberá crearlos manualmente o a través del servicio set.fso 
+
+## Privilegios de operaciones específicas
+
+FSO API asume que existen los privilegios básicos de BWL: read, write, plus y admin
+
+Adicionalmente, define privilegios para operaciones específicas y sus equivalencias (mapa de resolución de privilegios) con respecto a los privilegios básicos en fso.config.dk, lea el código fuente para comprender mejor o realizar personalizaciones.
+
+
