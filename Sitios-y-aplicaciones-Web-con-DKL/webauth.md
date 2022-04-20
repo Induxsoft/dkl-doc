@@ -11,7 +11,7 @@ using @http_token_locations
     @"get":"ids,token"
     @"cookie":"__induxsoft_token"
     @"form":"session_id"
-    @"json":""
+    @"json":"ids,token"
     @"bearer":@true
     @"header":""
     @"custom_auth":@true
