@@ -1,6 +1,6 @@
 ## Flujo HTTP a través de Devkron FastCGI Server
 
-<img src="img/devkron-http-flow.png"/>
+<img src="img/devkron-http-flow.svg"/>
 
 El flujo solicitud (request)/respuesta (response) HTTP gestionado a través de Devkron FastCGI Server se describe de la siguiente manera:
 1. Un cliente HTTP envía al servidor Web una solicitud
