@@ -175,64 +175,6 @@ p { margin-top: 0; margin-bottom: 1rem; }
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-97)">
-    <circle
-       id="ellipse4491"
-       pointer-events="all"
-       cy="206.31628"
-       cx="50.224018"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-78"
-       r="1.9724762"
-       style="fill:#7acff5;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4493"
-       pointer-events="all"
-       cy="206.31628"
-       cx="50.224018"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-78"
-       r="1.9724762"
-       style="fill:none;stroke:#000000;stroke-width:0.19724762" />
-    <g
-       id="g4497"
-       font-size="18px"
-       font-weight="bold"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-78"
-       style="font-weight:bold;font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-       transform="matrix(0.19724763,0,0,0.19724763,-0.46861868,119.72464)">
-      <text
-         id="text4495"
-         y="472.5"
-         x="256.5"
-         cell-id="XcwXP5cmwJYYGlQkWM4q-78">Interface</text>
-    </g>
-    <circle
-       id="ellipse4499"
-       pointer-events="all"
-       cy="206.31628"
-       cx="44.306591"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-75"
-       r="1.9724762"
-       style="fill:#7acff5;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4501"
-       pointer-events="all"
-       cy="206.31628"
-       cx="44.306591"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-75"
-       r="1.9724762"
-       style="fill:none;stroke:#000000;stroke-width:0.19724762" />
-    <g
-       id="g4505"
-       font-size="18px"
-       font-weight="bold"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-75"
-       style="font-weight:bold;font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-       transform="matrix(0.19724763,0,0,0.19724763,-0.46861868,119.72464)">
-      <text
-         id="text4503"
-         y="472.5"
-         x="226.5"
-         cell-id="XcwXP5cmwJYYGlQkWM4q-75">Interface</text>
-    </g>
     <rect
        id="rect4507"
        pointer-events="all"
@@ -256,38 +198,6 @@ p { margin-top: 0; margin-bottom: 1rem; }
        cy="252.1002"
        cx="136.90025"
        cell-id="XcwXP5cmwJYYGlQkWM4q-68"
-       r="1.9724762"
-       style="fill:none;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4513"
-       pointer-events="all"
-       cy="239.59471"
-       cx="136.90025"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-64"
-       r="1.9724762"
-       style="fill:#7acff5;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4515"
-       pointer-events="all"
-       cy="239.59471"
-       cx="136.90025"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-64"
-       r="1.9724762"
-       style="fill:none;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4517"
-       pointer-events="all"
-       cy="227.30618"
-       cx="136.90025"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-62"
-       r="1.9724762"
-       style="fill:#7acff5;stroke:#000000;stroke-width:0.19724762" />
-    <circle
-       id="ellipse4519"
-       pointer-events="all"
-       cy="227.30618"
-       cx="136.90025"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-62"
        r="1.9724762"
        style="fill:none;stroke:#000000;stroke-width:0.19724762" />
     <rect
@@ -749,21 +659,12 @@ p { margin-top: 0; margin-bottom: 1rem; }
        height="8.5605469"
        width="26.460768"
        y="223.42041"
-       x="134.71082"
+       x="134.91969"
        cell-id="XcwXP5cmwJYYGlQkWM4q-56"
        style="fill:#ffcc00;fill-opacity:1;stroke:#000000;stroke-width:0.19724762" />
-    <rect
-       id="rect4800"
-       pointer-events="all"
-       height="6.311924"
-       width="25.563293"
-       y="224.54471"
-       x="135.51953"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-57"
-       style="fill:none;stroke:none;stroke-width:0.19724762" />
     <g
        id="g4815"
-       transform="matrix(0.19724763,0,0,0.19724763,28.315446,129.43204)"
+       transform="matrix(0.19724763,0,0,0.19724763,28.524322,129.43197)"
        cell-id="XcwXP5cmwJYYGlQkWM4q-57">
       <switch
          id="switch4813"
@@ -817,19 +718,10 @@ p { margin-top: 0; margin-bottom: 1rem; }
        pointer-events="all"
        height="8.5484619"
        width="26.251888"
-       y="236.05029"
-       x="134.71686"
+       y="235.68507"
+       x="134.91969"
        cell-id="XcwXP5cmwJYYGlQkWM4q-58"
        style="fill:#ffcc00;stroke:#000000;stroke-width:0.20933333" />
-    <rect
-       id="rect4819"
-       pointer-events="all"
-       height="6.311924"
-       width="21.480267"
-       y="237.16856"
-       x="135.60829"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-59"
-       style="fill:none;stroke:none;stroke-width:0.19724762" />
     <g
        id="g4834"
        transform="matrix(0.26458333,0,0,0.26458333,32.55945,18.195318)"
@@ -920,15 +812,6 @@ p { margin-top: 0; margin-bottom: 1rem; }
        y="252.66948"
        x="122.79142"
        cell-id="XcwXP5cmwJYYGlQkWM4q-73"
-       style="fill:none;stroke:none;stroke-width:0.19724762" />
-    <rect
-       id="rect4886"
-       pointer-events="all"
-       height="11.045867"
-       width="27.61467"
-       y="225.05482"
-       x="41.742371"
-       cell-id="XcwXP5cmwJYYGlQkWM4q-74"
        style="fill:none;stroke:none;stroke-width:0.19724762" />
     <g
        id="g4916"
@@ -1476,13 +1359,13 @@ p { margin-top: 0; margin-bottom: 1rem; }
          sodipodi:role="line">Fast CGI Server</tspan></text>
     <text
        id="text5987"
-       y="241.47118"
-       x="136.42982"
+       y="241.2039"
+       x="135.62802"
        style="font-style:normal;font-weight:normal;font-size:3.95321059px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09883027"
        xml:space="preserve"><tspan
          style="stroke-width:0.09883027"
-         y="241.47118"
-         x="136.42982"
+         y="241.2039"
+         x="135.62802"
          id="tspan5985"
          sodipodi:role="line">routes.map</tspan></text>
   </g>
